@@ -1,0 +1,510 @@
+/* ==================== CSS Variables ==================== */
+:root {
+  /* Colors */
+  --primary: #A57865;
+  --primary-dark: #8B6450;
+  --text-primary: #2C2C2C;
+  --text-secondary: #5C5C5C;
+  --text-muted: #808080;
+  --neutral-100: #F5F1EE;
+  --neutral-200: #E8E4E0;
+  --error: #DC3545;
+  --success: #27AE60;
+  --white: #FFFFFF;
+
+  /* Typography */
+  --font-heading: 'Montserrat', Arial, sans-serif;
+  --font-body: 'Open Sans', Arial, sans-serif;
+}
+
+/* ==================== Container & Layout ==================== */
+.container {
+  min-height: 100vh;
+  background-color: var(--neutral-100);
+  display: flex;
+  flex-direction: column;
+}
+
+/* ==================== Header ==================== */
+.header {
+  background-color: var(--white);
+  border-bottom: 1px solid var(--neutral-200);
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.headerContent {
+  width: 100%;
+  max-width: 1440px;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-family: var(--font-heading);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--primary);
+  letter-spacing: 0.5px;
+}
+
+.nav {
+  display: none;
+}
+
+.navLink {
+  text-decoration: none;
+  color: var(--text-primary);
+  font-size: 16px;
+  font-weight: 500;
+  margin: 0 24px;
+  transition: color 0.2s ease;
+}
+
+.navLink:hover {
+  color: var(--primary);
+}
+
+.skipButton {
+  background: transparent;
+  border: none;
+  color: var(--text-secondary);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 8px 0;
+  transition: color 0.2s ease;
+}
+
+.skipButton:hover {
+  color: var(--primary);
+}
+
+/* ==================== Main Content ==================== */
+.main {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+/* ==================== Card ==================== */
+.card {
+  width: 100%;
+  background-color: var(--white);
+  padding: 32px 20px;
+  box-sizing: border-box;
+}
+
+.brandName {
+  font-family: var(--font-heading);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 24px;
+  letter-spacing: 0.5px;
+  text-align: center;
+}
+
+.title {
+  font-family: var(--font-heading);
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0 0 8px 0;
+  text-align: center;
+  line-height: 1.2;
+}
+
+.subtitle {
+  font-family: var(--font-body);
+  font-size: 15px;
+  color: var(--text-secondary);
+  margin: 0 0 32px 0;
+  text-align: center;
+}
+
+/* ==================== Form ==================== */
+.form {
+  width: 100%;
+}
+
+.formGroup {
+  margin-bottom: 20px;
+}
+
+.label {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+}
+
+.required {
+  color: var(--error);
+}
+
+.input {
+  width: 100%;
+  height: 48px;
+  padding: 14px 16px;
+  font-family: var(--font-body);
+  font-size: 16px;
+  color: var(--text-primary);
+  background-color: var(--white);
+  border: 1px solid var(--neutral-200);
+  border-radius: 8px;
+  box-sizing: border-box;
+  transition: all 0.2s ease;
+  outline: none;
+}
+
+.input::placeholder {
+  color: var(--text-muted);
+}
+
+.input:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(165, 120, 101, 0.12);
+}
+
+.input:disabled {
+  background-color: var(--neutral-100);
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.inputError {
+  border-color: var(--error);
+}
+
+.inputError:focus {
+  box-shadow: 0 0 0 3px rgba(220, 53, 69, 0.12);
+}
+
+/* ==================== Password Field ==================== */
+.passwordWrapper {
+  position: relative;
+}
+
+.passwordWrapper .input {
+  padding-right: 48px;
+}
+
+.passwordToggle {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.2s ease;
+}
+
+.passwordToggle:hover {
+  opacity: 0.7;
+}
+
+.passwordToggle:disabled {
+  cursor: not-allowed;
+  opacity: 0.4;
+}
+
+/* ==================== Error Message ==================== */
+.errorMessage {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 12px;
+  color: var(--error);
+  margin-top: 6px;
+}
+
+/* ==================== Form Options ==================== */
+.formOptions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.checkboxLabel {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+}
+
+.checkbox {
+  width: 18px;
+  height: 18px;
+  margin: 0;
+  margin-right: 8px;
+  cursor: pointer;
+  accent-color: var(--primary);
+}
+
+.checkboxText {
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: var(--text-primary);
+}
+
+.forgotPassword {
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.forgotPassword:hover {
+  color: var(--primary-dark);
+  text-decoration: underline;
+}
+
+/* ==================== Submit Button ==================== */
+.submitButton {
+  width: 100%;
+  height: 48px;
+  background-color: var(--primary);
+  color: var(--white);
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-bottom: 24px;
+}
+
+.submitButton:hover {
+  background-color: var(--primary-dark);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(165, 120, 101, 0.3);
+}
+
+.submitButton:active {
+  transform: translateY(0);
+}
+
+.submitButton:disabled {
+  background-color: var(--text-muted);
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* ==================== Divider ==================== */
+.divider {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.divider::before,
+.divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background-color: var(--neutral-200);
+}
+
+.dividerText {
+  font-family: var(--font-body);
+  font-size: 12px;
+  color: var(--text-muted);
+  padding: 0 12px;
+  white-space: nowrap;
+}
+
+/* ==================== Social Buttons ==================== */
+.socialButtons {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.socialButton {
+  width: 100%;
+  height: 44px;
+  background-color: var(--white);
+  border: 1px solid var(--neutral-200);
+  border-radius: 8px;
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--text-primary);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.2s ease;
+}
+
+.socialButton:hover {
+  background-color: var(--neutral-100);
+  border-color: var(--primary);
+}
+
+.socialButton:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.socialIcon {
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.socialButtonText {
+  display: inline-block;
+}
+
+/* ==================== Footer ==================== */
+.footer {
+  border-top: 1px solid var(--neutral-200);
+  padding-top: 20px;
+  text-align: center;
+}
+
+.footerText {
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin-right: 6px;
+}
+
+.signupLink {
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+.signupLink:hover {
+  color: var(--primary-dark);
+  text-decoration: underline;
+}
+
+/* ==================== Tablet Breakpoint (768px+) ==================== */
+@media (min-width: 768px) {
+  .header {
+    height: 72px;
+  }
+
+  .headerContent {
+    padding: 0 40px;
+  }
+
+  .logo {
+    font-size: 20px;
+  }
+
+  .nav {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .skipButton {
+    display: none;
+  }
+
+  .card {
+    max-width: 440px;
+    padding: 48px 40px;
+    border-radius: 16px;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+  }
+
+  .brandName {
+    font-size: 24px;
+    text-align: left;
+  }
+
+  .title {
+    font-size: 32px;
+    text-align: left;
+  }
+
+  .subtitle {
+    font-size: 16px;
+    text-align: left;
+    margin-bottom: 40px;
+  }
+
+  .input {
+    height: 52px;
+  }
+
+  .submitButton {
+    height: 52px;
+  }
+
+  .socialButtons {
+    flex-direction: row;
+  }
+
+  .socialButton {
+    height: 48px;
+  }
+
+  .socialButtonText {
+    display: none;
+  }
+}
+
+/* ==================== Desktop Breakpoint (1024px+) ==================== */
+@media (min-width: 1024px) {
+  .main {
+    padding: 40px;
+  }
+
+  .socialButtonText {
+    display: inline-block;
+  }
+}
+
+/* ==================== Focus Visible for Accessibility ==================== */
+*:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+button:focus-visible,
+input:focus-visible,
+a:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
