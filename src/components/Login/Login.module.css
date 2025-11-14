@@ -45,6 +45,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: relative;
 }
 
 .logo {
@@ -53,6 +54,7 @@
   font-weight: 700;
   color: var(--primary);
   letter-spacing: 0.5px;
+  flex-shrink: 0;
 }
 
 .nav {
@@ -64,12 +66,16 @@
   color: var(--text-primary);
   font-size: 16px;
   font-weight: 500;
-  margin: 0 24px;
   transition: color 0.2s ease;
+  white-space: nowrap;
 }
 
 .navLink:hover {
   color: var(--primary);
+}
+
+.navLink:not(:last-child) {
+  margin-right: 32px;
 }
 
 .skipButton {
@@ -81,6 +87,7 @@
   cursor: pointer;
   padding: 8px 0;
   transition: color 0.2s ease;
+  flex-shrink: 0;
 }
 
 .skipButton:hover {
@@ -94,6 +101,7 @@
   align-items: flex-start;
   justify-content: center;
   padding: 0;
+  min-height: calc(100vh - 56px);
 }
 
 /* ==================== Card ==================== */
@@ -434,9 +442,10 @@
   .nav {
     display: flex;
     align-items: center;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
+    gap: 0;
+    position: static;
+    transform: none;
+    margin-left: 48px;
   }
 
   .skipButton {
@@ -445,7 +454,8 @@
 
   .main {
     align-items: center;
-    padding: 40px 20px;
+    padding: 32px 20px;
+    min-height: calc(100vh - 72px);
   }
 
   .card {
@@ -497,6 +507,7 @@
 @media (min-width: 1024px) {
   .main {
     padding: 40px;
+    min-height: calc(100vh - 72px);
   }
 
   .card {
