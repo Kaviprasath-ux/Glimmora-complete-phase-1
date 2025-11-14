@@ -29,7 +29,7 @@
 .header {
   background-color: var(--white);
   border-bottom: 1px solid var(--neutral-200);
-  height: 56px;
+  height: 72px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -41,7 +41,7 @@
 .headerContent {
   width: 100%;
   max-width: 1440px;
-  padding: 0 20px;
+  padding: 0 40px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -50,7 +50,7 @@
 
 .logo {
   font-family: var(--font-heading);
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 700;
   color: var(--primary);
   letter-spacing: 0.5px;
@@ -58,7 +58,10 @@
 }
 
 .nav {
-  display: none;
+  display: flex;
+  align-items: center;
+  gap: 0;
+  margin-left: 48px;
 }
 
 .navLink {
@@ -79,67 +82,56 @@
 }
 
 .skipButton {
-  background: transparent;
-  border: none;
-  color: var(--text-secondary);
-  font-size: 14px;
-  font-weight: 500;
-  cursor: pointer;
-  padding: 8px 0;
-  transition: color 0.2s ease;
-  flex-shrink: 0;
-}
-
-.skipButton:hover {
-  color: var(--primary);
+  display: none;
 }
 
 /* ==================== Main Content ==================== */
 .main {
   flex: 1;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
-  padding: 0;
-  min-height: calc(100vh - 56px);
+  padding: 40px;
+  min-height: calc(100vh - 72px);
 }
 
 /* ==================== Card ==================== */
 .card {
-  width: 100%;
+  width: 440px;
+  max-width: 440px;
   background-color: var(--white);
-  padding: 32px 20px;
+  padding: 48px 40px;
   box-sizing: border-box;
-  border-radius: 0;
-  box-shadow: none;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
 }
 
 .brandName {
   font-family: var(--font-heading);
-  font-size: 20px;
+  font-size: 24px;
   font-weight: 700;
   color: var(--primary);
   margin-bottom: 24px;
   letter-spacing: 0.5px;
-  text-align: center;
+  text-align: left;
 }
 
 .title {
   font-family: var(--font-heading);
-  font-size: 28px;
+  font-size: 32px;
   font-weight: 700;
   color: var(--text-primary);
   margin: 0 0 8px 0;
-  text-align: center;
+  text-align: left;
   line-height: 1.2;
 }
 
 .subtitle {
   font-family: var(--font-body);
-  font-size: 15px;
+  font-size: 16px;
   color: var(--text-secondary);
-  margin: 0 0 32px 0;
-  text-align: center;
+  margin: 0 0 40px 0;
+  text-align: left;
 }
 
 /* ==================== Form ==================== */
@@ -166,7 +158,7 @@
 
 .input {
   width: 100%;
-  height: 48px;
+  height: 52px;
   padding: 14px 16px;
   font-family: var(--font-body);
   font-size: 16px;
@@ -294,7 +286,7 @@
 /* ==================== Submit Button ==================== */
 .submitButton {
   width: 100%;
-  height: 48px;
+  height: 52px;
   background-color: var(--primary);
   color: var(--white);
   font-family: var(--font-body);
@@ -353,14 +345,14 @@
 /* ==================== Social Buttons ==================== */
 .socialButtons {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   gap: 12px;
   margin-bottom: 24px;
 }
 
 .socialButton {
   width: 100%;
-  height: 44px;
+  height: 48px;
   background-color: var(--white);
   border: 1px solid var(--neutral-200);
   border-radius: 8px;
@@ -423,100 +415,6 @@
 .signupLink:hover {
   color: var(--primary-dark);
   text-decoration: underline;
-}
-
-/* ==================== Tablet Breakpoint (768px+) ==================== */
-@media (min-width: 768px) {
-  .header {
-    height: 72px;
-  }
-
-  .headerContent {
-    padding: 0 40px;
-  }
-
-  .logo {
-    font-size: 20px;
-  }
-
-  .nav {
-    display: flex;
-    align-items: center;
-    gap: 0;
-    position: static;
-    transform: none;
-    margin-left: 48px;
-  }
-
-  .skipButton {
-    display: none;
-  }
-
-  .main {
-    align-items: center;
-    padding: 32px 20px;
-    min-height: calc(100vh - 72px);
-  }
-
-  .card {
-    width: 440px;
-    max-width: 440px;
-    padding: 48px 40px;
-    border-radius: 16px;
-    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
-  }
-
-  .brandName {
-    font-size: 24px;
-    text-align: left;
-  }
-
-  .title {
-    font-size: 32px;
-    text-align: left;
-  }
-
-  .subtitle {
-    font-size: 16px;
-    text-align: left;
-    margin-bottom: 40px;
-  }
-
-  .input {
-    height: 52px;
-  }
-
-  .submitButton {
-    height: 52px;
-  }
-
-  .socialButtons {
-    flex-direction: row;
-  }
-
-  .socialButton {
-    height: 48px;
-  }
-
-  .socialButtonText {
-    display: none;
-  }
-}
-
-/* ==================== Desktop Breakpoint (1024px+) ==================== */
-@media (min-width: 1024px) {
-  .main {
-    padding: 40px;
-    min-height: calc(100vh - 72px);
-  }
-
-  .card {
-    width: 440px;
-  }
-
-  .socialButtonText {
-    display: inline-block;
-  }
 }
 
 /* ==================== Focus Visible for Accessibility ==================== */
