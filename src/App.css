@@ -1,7 +1,16 @@
-/* Global reset for the Login page */
+/* ==================== App Layout ==================== */
+/* Ensure #root takes full space and works with flex layout */
 #root {
-  max-width: 100%;
+  width: 100%;
+  min-height: 100vh;
   margin: 0;
   padding: 0;
-  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #F5F1EE;
+}
+
+/* Ensure all child elements inherit box-sizing */
+* {
+  box-sizing: border-box;
 }
