@@ -169,7 +169,16 @@
 }
 
 .input::placeholder {
-  color: var(--text-muted);
+  color: #808080;
+  opacity: 1;
+}
+
+.input:-ms-input-placeholder {
+  color: #808080;
+}
+
+.input::-ms-input-placeholder {
+  color: #808080;
 }
 
 .input:focus {
