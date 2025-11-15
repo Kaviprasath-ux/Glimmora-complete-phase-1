@@ -8,6 +8,9 @@ import {
   Dumbbell,
   Coffee,
   Shield,
+  Building2,
+  ClipboardCheck,
+  MessageCircle,
 } from 'lucide-react';
 import Navigation from './Navigation';
 import HeroSection from './HeroSection';
@@ -134,6 +137,40 @@ const Home: React.FC<HomeProps> = ({ isAuthenticated = false, user }) => {
 
       {/* Hero Section */}
       <HeroSection isAuthenticated={isAuthenticated} userName={userName} />
+
+      {/* Quick Actions Section - For Logged-in Users Only */}
+      {isAuthenticated && (
+        <section className={styles.quickActionsSection}>
+          <div className={styles.quickActionsContainer}>
+            <h2 className={styles.quickActionsTitle}>Quick Actions</h2>
+            <div className={styles.quickActionsGrid}>
+              <a href="/rooms" className={styles.actionCard}>
+                <Building2 size={32} strokeWidth={1.5} />
+                <h3>Book a Room</h3>
+                <p>Find and book your perfect stay</p>
+              </a>
+
+              <a href="/pre-check-in" className={styles.actionCard}>
+                <ClipboardCheck size={32} strokeWidth={1.5} />
+                <h3>Pre Check-in</h3>
+                <p>Complete online check-in</p>
+              </a>
+
+              <a href="/services" className={styles.actionCard}>
+                <Sparkles size={32} strokeWidth={1.5} />
+                <h3>Services</h3>
+                <p>Explore hotel amenities</p>
+              </a>
+
+              <a href="/contact" className={styles.actionCard}>
+                <MessageCircle size={32} strokeWidth={1.5} />
+                <h3>Contact Us</h3>
+                <p>Get help and support</p>
+              </a>
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* Featured Rooms Section */}
       <section className={styles.featuredRoomsSection}>

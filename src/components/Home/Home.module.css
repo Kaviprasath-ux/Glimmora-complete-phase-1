@@ -752,3 +752,116 @@
   text-align: center;
   margin: 0;
 }
+
+/* ==================== Quick Actions Section ==================== */
+.quickActionsSection {
+  background: var(--neutral-light);
+  padding: 64px 48px;
+  border-bottom: 1px solid var(--neutral-border);
+}
+
+.quickActionsContainer {
+  max-width: 1344px;
+  margin: 0 auto;
+}
+
+.quickActionsTitle {
+  font-family: var(--font-heading);
+  font-size: 32px;
+  font-weight: 600;
+  color: var(--text-primary);
+  text-align: center;
+  margin: 0 0 40px 0;
+}
+
+.quickActionsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.actionCard {
+  background: var(--white);
+  border: 1px solid var(--neutral-border);
+  border-radius: 12px;
+  padding: 32px;
+  text-align: center;
+  text-decoration: none;
+  transition: all 300ms ease;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+}
+
+.actionCard:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  border-color: var(--primary);
+}
+
+.actionCard svg {
+  color: var(--primary);
+  margin-bottom: 16px;
+  flex-shrink: 0;
+}
+
+.actionCard h3 {
+  font-family: var(--font-heading);
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0 0 8px 0;
+}
+
+.actionCard p {
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--text-secondary);
+  line-height: 20px;
+  margin: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+  .quickActionsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .quickActionsSection {
+    padding: 48px 24px;
+  }
+
+  .quickActionsTitle {
+    font-size: 24px;
+    margin-bottom: 24px;
+  }
+
+  .quickActionsGrid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .actionCard {
+    padding: 24px;
+    min-height: 160px;
+  }
+
+  .actionCard svg {
+    width: 28px;
+    height: 28px;
+  }
+
+  .actionCard h3 {
+    font-size: 16px;
+  }
+
+  .actionCard p {
+    font-size: 13px;
+  }
+}
