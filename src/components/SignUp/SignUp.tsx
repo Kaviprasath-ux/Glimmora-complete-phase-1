@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import type { FormEvent, ChangeEvent } from 'react';
-import { Eye, EyeOff, Check, Circle, Chrome, Facebook } from 'lucide-react';
+import { Eye, EyeOff, Chrome, Facebook } from 'lucide-react';
 import styles from './SignUp.module.css';
 
 interface PasswordRequirements {
@@ -199,19 +199,6 @@ const SignUp: React.FC = () => {
     }
   };
 
-  const RequirementItem: React.FC<{ met: boolean; text: string }> = ({ met, text }) => (
-    <div className={styles.requirement}>
-      {met ? (
-        <Check size={12} color="#27AE60" strokeWidth={3} />
-      ) : (
-        <Circle size={12} color="#808080" strokeWidth={2} />
-      )}
-      <span className={met ? styles.requirementMet : styles.requirementUnmet}>
-        {text}
-      </span>
-    </div>
-  );
-
   return (
     <div className={styles.container}>
       <header className={styles.header}>
@@ -229,7 +216,7 @@ const SignUp: React.FC = () => {
         <div className={styles.card}>
           <h1 className={styles.title}>Create Your Account</h1>
           <p className={styles.description}>
-            Join Glimmora to book exclusive hotel rooms and enjoy seamless travel experiences.
+            Join Glimmora for exclusive member benefits
           </p>
 
           <form onSubmit={handleSubmit} className={styles.form} noValidate>
@@ -381,18 +368,6 @@ const SignUp: React.FC = () => {
               </div>
             )}
 
-            {/* Password Requirements */}
-            {password.length > 0 && (
-              <div className={styles.requirementsContainer}>
-                <p className={styles.requirementsTitle}>Password Requirements:</p>
-                <RequirementItem met={requirements.minLength} text="At least 8 characters" />
-                <RequirementItem met={requirements.hasUppercase} text="One uppercase letter" />
-                <RequirementItem met={requirements.hasLowercase} text="One lowercase letter" />
-                <RequirementItem met={requirements.hasNumber} text="One number" />
-                <RequirementItem met={requirements.hasSpecial} text="One special character (optional)" />
-              </div>
-            )}
-
             {/* Confirm Password */}
             <div className={styles.formGroup}>
               <label htmlFor="confirmPassword" className={styles.label}>
@@ -482,7 +457,7 @@ const SignUp: React.FC = () => {
 
           {/* Divider */}
           <div className={styles.divider}>
-            <span className={styles.dividerText}>Or sign up with</span>
+            <span className={styles.dividerText}>or sign up with</span>
           </div>
 
           {/* Social Sign Up Buttons */}
