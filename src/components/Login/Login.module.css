@@ -160,8 +160,8 @@
   font-family: var(--font-body);
   font-size: 16px;
   color: var(--text-primary);
-  background-color: var(--white);
-  border: 1px solid var(--neutral-200);
+  background-color: #FFFFFF;
+  border: 1px solid #E8E4E0;
   border-radius: 8px;
   box-sizing: border-box;
   transition: all 0.2s ease;
@@ -182,7 +182,8 @@
 }
 
 .input:focus {
-  border-color: var(--primary);
+  background-color: #FFFFFF;
+  border-color: #A57865;
   box-shadow: 0 0 0 3px rgba(165, 120, 101, 0.12);
 }
 
