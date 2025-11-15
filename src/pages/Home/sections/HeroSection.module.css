@@ -1,0 +1,275 @@
+.heroSection {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 0 48px;
+}
+
+/* Animated Background */
+.gradientBackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+/* Mesh Gradient Overlay */
+.meshGradient {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background:
+    radial-gradient(at 20% 30%, rgba(255, 255, 255, 0.05) 0px, transparent 50%),
+    radial-gradient(at 80% 70%, rgba(255, 255, 255, 0.08) 0px, transparent 50%),
+    radial-gradient(at 50% 50%, rgba(212, 175, 55, 0.1) 0px, transparent 50%);
+  z-index: 1;
+}
+
+/* Floating Particles */
+.particlesContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.particle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+}
+
+/* Hero Content */
+.heroContent {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  max-width: 1200px;
+  width: 100%;
+}
+
+/* Premium Badge */
+.premiumBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 24px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50px;
+  color: #FFFFFF;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 32px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.premiumBadge svg {
+  color: #D4AF37;
+}
+
+/* Hero Title */
+.heroTitle {
+  font-size: 84px;
+  font-weight: 800;
+  line-height: 1.1;
+  color: #FFFFFF;
+  margin-bottom: 32px;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  letter-spacing: -2px;
+}
+
+.nameHighlight {
+  background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  position: relative;
+}
+
+.goldText {
+  background: linear-gradient(135deg, #D4AF37 0%, #FFD700 50%, #D4AF37 100%);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 3s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+.emoji {
+  display: inline-block;
+  margin-left: 16px;
+}
+
+/* Hero Subtitle */
+.heroSubtitle {
+  font-size: 24px;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.95);
+  margin-bottom: 64px;
+  line-height: 1.6;
+  letter-spacing: 0.5px;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Glassmorphism Search Widget */
+.searchWidget {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 24px;
+  padding: 16px;
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  max-width: 1000px;
+  margin: 0 auto 80px;
+}
+
+.searchGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr) auto;
+  gap: 12px;
+}
+
+.searchField {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 16px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  cursor: pointer;
+  transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.searchField:hover {
+  background: rgba(255, 255, 255, 1);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+.fieldIcon {
+  color: #A57865;
+  flex-shrink: 0;
+}
+
+.fieldContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.fieldContent label {
+  font-size: 12px;
+  font-weight: 600;
+  color: #5C5C5C;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.fieldContent input,
+.fieldContent select {
+  border: none;
+  background: transparent;
+  font-size: 16px;
+  font-weight: 500;
+  color: #2C2C2C;
+  outline: none;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+/* Search Button with Animated Gradient */
+.searchButton {
+  position: relative;
+  padding: 0 40px;
+  height: 100%;
+  min-height: 72px;
+  background: #A57865;
+  border: none;
+  border-radius: 16px;
+  color: #FFFFFF;
+  font-size: 16px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 300ms;
+}
+
+.buttonGradient {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    #A57865 0%,
+    #D4AF37 25%,
+    #A57865 50%,
+    #D4AF37 75%,
+    #A57865 100%
+  );
+  background-size: 200% 100%;
+  z-index: 0;
+}
+
+.searchButton span,
+.searchButton svg {
+  position: relative;
+  z-index: 1;
+}
+
+/* Scroll Indicator */
+.scrollIndicator {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  color: rgba(255, 255, 255, 0.8);
+  cursor: pointer;
+  transition: all 300ms;
+}
+
+.scrollIndicator:hover {
+  color: rgba(255, 255, 255, 1);
+}
+
+.scrollIndicator span {
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}

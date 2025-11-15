@@ -1,5 +1,5 @@
 // Pages and Components
-import Home from './components/Home/Home';
+import Home from './pages/Home/Home';
 import Login from './components/Login/Login';
 import ForgotPassword from './components/ForgotPassword/ForgotPassword';
 import ResetPassword from './components/ResetPassword/ResetPassword';
@@ -32,7 +32,7 @@ function AppContent() {
     <>
       <DemoModeIndicator />
       <Routes>
-        <Route path="/" element={<Home isAuthenticated={isAuthenticated} user={user} />} />
+        <Route path="/" element={<Home />} />
 
         {/* Authentication Routes */}
         <Route path="/login" element={<Login />} />
