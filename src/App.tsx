@@ -10,11 +10,11 @@ function App() {
   // Showing Home page
   // Toggle isAuthenticated to test both states
 
-  // UNLOGGED STATE (DEFAULT):
-  return <Home isAuthenticated={false} />;
+  // LOGGED-IN STATE (Shows new avatar dropdown design):
+  return <Home isAuthenticated={true} user={{ firstName: 'John', lastName: 'Doe', email: 'john.doe@glimmora.com' }} />;
 
-  // LOGGED-IN STATE (Uncomment to test):
-  // return <Home isAuthenticated={true} user={{ firstName: 'John', lastName: 'Doe', email: 'john.doe@glimmora.com' }} />;
+  // UNLOGGED STATE (Uncomment to test):
+  // return <Home isAuthenticated={false} />;
 }
 
 export default App;
