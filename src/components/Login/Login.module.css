@@ -207,13 +207,13 @@
   transform: translateY(-50%);
   background: transparent;
   border: none;
-  font-size: 20px;
   cursor: pointer;
   padding: 8px;
   display: flex;
   align-items: center;
   justify-content: center;
   transition: opacity 0.2s ease;
+  color: var(--text-secondary);
 }
 
 .passwordToggle:hover {
@@ -376,10 +376,11 @@
 }
 
 .socialIcon {
-  font-size: 18px;
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 20px;
+  height: 20px;
 }
 
 .socialButtonText {

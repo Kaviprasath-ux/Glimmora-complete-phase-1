@@ -13,6 +13,33 @@ interface FormErrors {
   password?: string;
 }
 
+// Icon Components
+const EyeIcon = () => (
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+    <circle cx="12" cy="12" r="3"></circle>
+  </svg>
+);
+
+const EyeOffIcon = () => (
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"></path>
+    <line x1="1" y1="1" x2="23" y2="23"></line>
+  </svg>
+);
+
+const GoogleIcon = () => (
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M12.48 10.92v3.28h7.84c-.24 1.84-.853 3.187-1.787 4.133-1.147 1.147-2.933 2.4-6.053 2.4-4.827 0-8.6-3.893-8.6-8.72s3.773-8.72 8.6-8.72c2.6 0 4.507 1.027 5.907 2.347l2.307-2.307C18.747 1.44 16.133 0 12.48 0 5.867 0 .307 5.387.307 12s5.56 12 12.173 12c3.573 0 6.267-1.173 8.373-3.36 2.16-2.16 2.84-5.213 2.84-7.667 0-.76-.053-1.467-.173-2.053H12.48z"></path>
+  </svg>
+);
+
+const FacebookIcon = () => (
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+  </svg>
+);
+
 const Login: React.FC = () => {
   const [formData, setFormData] = useState<FormData>({
     email: '',
@@ -196,7 +223,7 @@ const Login: React.FC = () => {
                   aria-label={showPassword ? 'Hide password' : 'Show password'}
                   disabled={isLoading}
                 >
-                  {showPassword ? '👁' : '👁'}
+                  {showPassword ? <EyeOffIcon /> : <EyeIcon />}
                 </button>
               </div>
               {errors.password && touched.password && (
@@ -244,7 +271,7 @@ const Login: React.FC = () => {
                 disabled={isLoading}
                 aria-label="Sign in with Google"
               >
-                <span className={styles.socialIcon}>🔍</span>
+                <span className={styles.socialIcon}><GoogleIcon /></span>
                 <span className={styles.socialButtonText}>Google</span>
               </button>
               <button
@@ -254,7 +281,7 @@ const Login: React.FC = () => {
                 disabled={isLoading}
                 aria-label="Sign in with Facebook"
               >
-                <span className={styles.socialIcon}>📘</span>
+                <span className={styles.socialIcon}><FacebookIcon /></span>
                 <span className={styles.socialButtonText}>Facebook</span>
               </button>
             </div>
