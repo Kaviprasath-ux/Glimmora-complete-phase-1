@@ -36,6 +36,7 @@ const SignUp: React.FC = () => {
     phone: false,
     password: false,
     confirmPassword: false,
+    terms: false,
   });
 
   const [requirements, setRequirements] = useState<PasswordRequirements>({
@@ -134,6 +135,12 @@ const SignUp: React.FC = () => {
     setTouched(prev => ({ ...prev, [field]: true }));
   };
 
+  const isValidName = (name: string): boolean => {
+    // Min 2 chars, letters only (including accented characters)
+    const nameRegex = /^[a-zA-ZÀ-ÿ]{2,}$/;
+    return nameRegex.test(name.trim());
+  };
+
   const isValidEmail = (email: string): boolean => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailRegex.test(email);
@@ -154,8 +161,8 @@ const SignUp: React.FC = () => {
 
   const isFormValid = () => {
     return (
-      firstName.trim().length > 0 &&
-      lastName.trim().length > 0 &&
+      isValidName(firstName) &&
+      isValidName(lastName) &&
       isValidEmail(email) &&
       isPasswordValid() &&
       isConfirmPasswordValid() &&
@@ -173,6 +180,7 @@ const SignUp: React.FC = () => {
       phone: true,
       password: true,
       confirmPassword: true,
+      terms: true,
     });
 
     if (!isFormValid()) {
@@ -234,15 +242,17 @@ const SignUp: React.FC = () => {
                   onChange={handleFirstNameChange}
                   onBlur={() => handleBlur('firstName')}
                   className={`${styles.input} ${
-                    touched.firstName && firstName.trim().length === 0 ? styles.inputError : ''
+                    touched.firstName && !isValidName(firstName) ? styles.inputError : ''
                   }`}
                   placeholder="John"
                   disabled={isLoading}
-                  aria-invalid={touched.firstName && firstName.trim().length === 0}
+                  aria-invalid={touched.firstName && !isValidName(firstName)}
                 />
-                {touched.firstName && firstName.trim().length === 0 && (
+                {touched.firstName && !isValidName(firstName) && (
                   <span className={styles.errorMessage} role="alert">
-                    First name is required
+                    {firstName.trim().length === 0
+                      ? 'First name is required'
+                      : 'First name must be at least 2 letters'}
                   </span>
                 )}
               </div>
@@ -259,15 +269,17 @@ const SignUp: React.FC = () => {
                   onChange={handleLastNameChange}
                   onBlur={() => handleBlur('lastName')}
                   className={`${styles.input} ${
-                    touched.lastName && lastName.trim().length === 0 ? styles.inputError : ''
+                    touched.lastName && !isValidName(lastName) ? styles.inputError : ''
                   }`}
                   placeholder="Doe"
                   disabled={isLoading}
-                  aria-invalid={touched.lastName && lastName.trim().length === 0}
+                  aria-invalid={touched.lastName && !isValidName(lastName)}
                 />
-                {touched.lastName && lastName.trim().length === 0 && (
+                {touched.lastName && !isValidName(lastName) && (
                   <span className={styles.errorMessage} role="alert">
-                    Last name is required
+                    {lastName.trim().length === 0
+                      ? 'Last name is required'
+                      : 'Last name must be at least 2 letters'}
                   </span>
                 )}
               </div>
@@ -288,7 +300,7 @@ const SignUp: React.FC = () => {
                 className={`${styles.input} ${
                   touched.email && !isValidEmail(email) ? styles.inputError : ''
                 }`}
-                placeholder="john.doe@example.com"
+                placeholder="your.email@example.com"
                 disabled={isLoading}
                 aria-invalid={touched.email && !isValidEmail(email)}
               />
@@ -331,9 +343,12 @@ const SignUp: React.FC = () => {
                   value={password}
                   onChange={handlePasswordChange}
                   onBlur={() => handleBlur('password')}
-                  className={styles.input}
+                  className={`${styles.input} ${
+                    touched.password && !isPasswordValid() ? styles.inputError : ''
+                  }`}
                   placeholder="Enter your password"
                   disabled={isLoading}
+                  aria-invalid={touched.password && !isPasswordValid()}
                 />
                 <button
                   type="button"
@@ -345,6 +360,11 @@ const SignUp: React.FC = () => {
                   {showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
                 </button>
               </div>
+              {touched.password && password.length > 0 && password.length < 8 && (
+                <span className={styles.errorMessage} role="alert">
+                  Password must be at least 8 characters
+                </span>
+              )}
             </div>
 
             {/* Password Strength Indicator */}
@@ -409,23 +429,31 @@ const SignUp: React.FC = () => {
 
             {/* Terms Checkbox (Required) */}
             <div className={styles.checkboxGroup}>
-              <label className={styles.checkboxLabel}>
-                <input
-                  type="checkbox"
-                  checked={termsAccepted}
-                  onChange={(e) => setTermsAccepted(e.target.checked)}
-                  className={styles.checkbox}
-                  disabled={isLoading}
-                  required
-                />
-                <span className={styles.checkboxText}>
-                  I agree to the{' '}
-                  <a href="#terms" className={styles.link}>Terms of Service</a>
-                  {' '}and{' '}
-                  <a href="#privacy" className={styles.link}>Privacy Policy</a>
-                  <span className={styles.required}> *</span>
-                </span>
-              </label>
+              <div className={styles.checkboxWrapper}>
+                <label className={styles.checkboxLabel}>
+                  <input
+                    type="checkbox"
+                    checked={termsAccepted}
+                    onChange={(e) => setTermsAccepted(e.target.checked)}
+                    onBlur={() => handleBlur('terms')}
+                    className={styles.checkbox}
+                    disabled={isLoading}
+                    required
+                  />
+                  <span className={styles.checkboxText}>
+                    I agree to the{' '}
+                    <a href="#terms" className={styles.link}>Terms of Service</a>
+                    {' '}and{' '}
+                    <a href="#privacy" className={styles.link}>Privacy Policy</a>
+                    <span className={styles.required}> *</span>
+                  </span>
+                </label>
+                {touched.terms && !termsAccepted && (
+                  <span className={styles.errorMessage} role="alert">
+                    You must agree to the Terms of Service
+                  </span>
+                )}
+              </div>
             </div>
 
             {/* Marketing Checkbox (Optional) */}

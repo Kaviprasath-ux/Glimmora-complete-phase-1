@@ -149,7 +149,7 @@
 .label {
   font-family: var(--font-body);
   font-size: 14px;
-  font-weight: 600;
+  font-weight: 500;
   color: var(--text-primary);
 }
 
@@ -170,6 +170,7 @@
   padding: 14px 16px;
   font-family: var(--font-body);
   font-size: 16px;
+  font-weight: 400;
   color: var(--text-primary);
   background-color: #FFFFFF;
   border: 1px solid var(--neutral-200);
@@ -181,21 +182,25 @@
 .input::placeholder {
   color: #808080;
   opacity: 1;
+  font-weight: 400;
 }
 
 .input::-webkit-input-placeholder {
   color: #808080;
   opacity: 1;
+  font-weight: 400;
 }
 
 .input::-moz-placeholder {
   color: #808080;
   opacity: 1;
+  font-weight: 400;
 }
 
 .input:-ms-input-placeholder {
   color: #808080;
   opacity: 1;
+  font-weight: 400;
 }
 
 .input:focus {
@@ -280,7 +285,7 @@
 .strengthText {
   font-family: var(--font-body);
   font-size: 12px;
-  font-weight: 600;
+  font-weight: 500;
   min-width: 60px;
   text-align: right;
 }
@@ -289,19 +294,28 @@
 .errorMessage {
   font-family: var(--font-body);
   font-size: 12px;
+  font-weight: 400;
   color: var(--error);
-  margin-top: -4px;
+  margin-top: 4px;
+  display: block;
 }
 
 /* ==================== Checkbox Group ==================== */
 .checkboxGroup {
   display: flex;
-  align-items: flex-start;
+  flex-direction: column;
   margin-bottom: 16px;
 }
 
 .checkboxGroup:last-of-type {
   margin-bottom: 32px;
+}
+
+.checkboxWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 100%;
 }
 
 .checkboxLabel {
@@ -362,20 +376,23 @@
 .checkboxText {
   font-family: var(--font-body);
   font-size: 14px;
-  color: var(--text-primary);
+  font-weight: 400;
+  color: var(--text-secondary);
   line-height: 20px;
 }
 
 /* ==================== Links ==================== */
 .link {
   color: var(--primary);
-  text-decoration: underline;
-  font-weight: 600;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
   transition: color 0.2s ease;
 }
 
 .link:hover {
   color: var(--primary-dark);
+  text-decoration: underline;
 }
 
 /* ==================== Submit Button ==================== */
@@ -411,14 +428,14 @@
   cursor: not-allowed;
   transform: none;
   box-shadow: none;
-  opacity: 0.7;
+  opacity: 0.6;
 }
 
 /* ==================== Divider ==================== */
 .divider {
   position: relative;
   text-align: center;
-  margin: 0;
+  margin: 32px 0;
 }
 
 .divider::before {
@@ -438,6 +455,7 @@
   background-color: var(--white);
   font-family: var(--font-body);
   font-size: 12px;
+  font-weight: 400;
   color: var(--text-muted);
 }
 
@@ -459,7 +477,7 @@
   color: var(--text-primary);
   font-family: var(--font-body);
   font-size: 14px;
-  font-weight: 600;
+  font-weight: 500;
   border: 1px solid var(--neutral-200);
   border-radius: 8px;
   cursor: pointer;
@@ -486,8 +504,13 @@
 .signInLink {
   font-family: var(--font-body);
   font-size: 14px;
+  font-weight: 400;
   color: var(--text-secondary);
   text-align: center;
+}
+
+.signInLink .link {
+  font-weight: 600;
 }
 
 /* ==================== Focus Visible for Accessibility ==================== */
