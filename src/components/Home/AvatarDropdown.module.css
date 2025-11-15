@@ -1,0 +1,182 @@
+/* ==================== Avatar Dropdown Container ==================== */
+.avatarDropdownContainer {
+  position: relative;
+}
+
+/* ==================== Avatar Button ==================== */
+.avatarButton {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  padding: 0;
+  position: relative;
+}
+
+.avatarCircle {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: #E8E4E0;
+  color: #2C2C2C;
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 200ms ease;
+  border: 2px solid transparent;
+}
+
+.avatarButton:hover .avatarCircle {
+  border-color: #A57865;
+}
+
+.chevronIcon {
+  color: #5C5C5C;
+  transition: all 200ms ease;
+}
+
+.avatarButton:hover .chevronIcon {
+  color: #A57865;
+}
+
+.chevronOpen {
+  transform: rotate(180deg);
+}
+
+/* ==================== Dropdown Menu ==================== */
+.dropdownMenu {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  width: 220px;
+  background-color: #FFFFFF;
+  border: 1px solid #E8E4E0;
+  border-radius: 12px;
+  box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.12);
+  padding: 8px;
+  z-index: 1001;
+  animation: fadeIn 200ms ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ==================== Dropdown Header ==================== */
+.dropdownHeader {
+  padding: 12px;
+  border-bottom: 1px solid #F5F1EE;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.avatarSmall {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: #E8E4E0;
+  color: #2C2C2C;
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.userInfo {
+  flex: 1;
+  min-width: 0;
+}
+
+.userName {
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  color: #2C2C2C;
+  margin: 0 0 2px 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.userEmail {
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  color: #808080;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ==================== Menu Items ==================== */
+.menuItems {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.menuItem {
+  height: 40px;
+  padding: 0 12px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: #2C2C2C;
+  background: transparent;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 200ms ease;
+  width: 100%;
+  text-align: left;
+}
+
+.menuItem svg {
+  color: #A57865;
+  flex-shrink: 0;
+}
+
+.menuItem:hover {
+  background-color: #F9F7F5;
+}
+
+/* ==================== Divider ==================== */
+.divider {
+  height: 1px;
+  background-color: #F5F1EE;
+  margin: 8px 0;
+}
+
+/* ==================== Sign Out Item ==================== */
+.signOutItem {
+  color: #DC3545;
+}
+
+.signOutItem svg {
+  color: #DC3545;
+}
+
+.signOutItem:hover {
+  background-color: #FEF2F2;
+}

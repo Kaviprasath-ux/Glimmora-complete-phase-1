@@ -14,7 +14,7 @@ function App() {
   return <Home isAuthenticated={false} />;
 
   // LOGGED-IN STATE (Uncomment to test):
-  // return <Home isAuthenticated={true} user={{ firstName: 'John', lastName: 'Doe' }} />;
+  // return <Home isAuthenticated={true} user={{ firstName: 'John', lastName: 'Doe', email: 'john.doe@glimmora.com' }} />;
 }
 
 export default App;

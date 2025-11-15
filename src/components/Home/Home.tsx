@@ -21,11 +21,13 @@ interface HomeProps {
   user?: {
     firstName?: string;
     lastName?: string;
+    email?: string;
   };
 }
 
 const Home: React.FC<HomeProps> = ({ isAuthenticated = false, user }) => {
   const userName = user?.firstName || 'Guest';
+  const userEmail = user?.email || 'user@glimmora.com';
   const userInitials = user
     ? `${user.firstName?.[0] || ''}${user.lastName?.[0] || ''}`.toUpperCase()
     : 'G';
@@ -122,6 +124,7 @@ const Home: React.FC<HomeProps> = ({ isAuthenticated = false, user }) => {
       <Navigation
         isAuthenticated={isAuthenticated}
         userName={userName}
+        userEmail={userEmail}
         userInitials={userInitials}
         notificationCount={isAuthenticated ? 3 : 0}
         activeTab="home"

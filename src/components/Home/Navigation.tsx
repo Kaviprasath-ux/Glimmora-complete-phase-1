@@ -1,10 +1,12 @@
 import React from 'react';
 import { Bell } from 'lucide-react';
+import AvatarDropdown from './AvatarDropdown';
 import styles from './Home.module.css';
 
 interface NavigationProps {
   isAuthenticated: boolean;
   userName?: string;
+  userEmail?: string;
   userInitials?: string;
   notificationCount?: number;
   activeTab?: string;
@@ -14,6 +16,7 @@ interface NavigationProps {
 const Navigation: React.FC<NavigationProps> = ({
   isAuthenticated,
   userName = 'Guest',
+  userEmail = 'user@glimmora.com',
   userInitials = 'G',
   notificationCount = 0,
   activeTab = 'home',
@@ -40,87 +43,40 @@ const Navigation: React.FC<NavigationProps> = ({
             GLIMMORA
           </a>
 
-          {/* Middle - Nav Items (Dynamic based on auth) */}
+          {/* Middle - Nav Items (Same for both logged and unlogged) */}
           <div className={styles.navItems}>
-            {!isAuthenticated ? (
-              <>
-                <a
-                  href="/rooms"
-                  className={`${styles.navItem} ${
-                    activeTab === 'rooms' ? styles.navItemActive : ''
-                  }`}
-                >
-                  Rooms
-                </a>
-                <a
-                  href="/services"
-                  className={`${styles.navItem} ${
-                    activeTab === 'services' ? styles.navItemActive : ''
-                  }`}
-                >
-                  Services
-                </a>
-                <a
-                  href="/about"
-                  className={`${styles.navItem} ${
-                    activeTab === 'about' ? styles.navItemActive : ''
-                  }`}
-                >
-                  About
-                </a>
-                <a
-                  href="/contact"
-                  className={`${styles.navItem} ${
-                    activeTab === 'contact' ? styles.navItemActive : ''
-                  }`}
-                >
-                  Contact
-                </a>
-              </>
-            ) : (
-              <>
-                <a
-                  href="/"
-                  className={`${styles.navItem} ${
-                    activeTab === 'home' ? styles.navItemActive : ''
-                  }`}
-                >
-                  Home
-                </a>
-                <a
-                  href="/rooms"
-                  className={`${styles.navItem} ${
-                    activeTab === 'rooms' ? styles.navItemActive : ''
-                  }`}
-                >
-                  Rooms
-                </a>
-                <a
-                  href="/services"
-                  className={`${styles.navItem} ${
-                    activeTab === 'services' ? styles.navItemActive : ''
-                  }`}
-                >
-                  Services
-                </a>
-                <a
-                  href="/bookings"
-                  className={`${styles.navItem} ${
-                    activeTab === 'bookings' ? styles.navItemActive : ''
-                  }`}
-                >
-                  Bookings
-                </a>
-                <a
-                  href="/profile"
-                  className={`${styles.navItem} ${
-                    activeTab === 'profile' ? styles.navItemActive : ''
-                  }`}
-                >
-                  Profile
-                </a>
-              </>
-            )}
+            <a
+              href="/"
+              className={`${styles.navItem} ${
+                activeTab === 'home' ? styles.navItemActive : ''
+              }`}
+            >
+              Home
+            </a>
+            <a
+              href="/rooms"
+              className={`${styles.navItem} ${
+                activeTab === 'rooms' ? styles.navItemActive : ''
+              }`}
+            >
+              Rooms
+            </a>
+            <a
+              href="/services"
+              className={`${styles.navItem} ${
+                activeTab === 'services' ? styles.navItemActive : ''
+              }`}
+            >
+              Services
+            </a>
+            <a
+              href="/contact"
+              className={`${styles.navItem} ${
+                activeTab === 'contact' ? styles.navItemActive : ''
+              }`}
+            >
+              Contact
+            </a>
           </div>
         </div>
 
@@ -144,12 +100,12 @@ const Navigation: React.FC<NavigationProps> = ({
                 )}
               </div>
               <span className={styles.userGreeting}>Hi, {userName}</span>
-              <a href="/profile" className={styles.userAvatar}>
-                {userInitials}
-              </a>
-              <button className={styles.signOutLink} onClick={handleSignOut}>
-                Sign Out
-              </button>
+              <AvatarDropdown
+                userName={userName}
+                userEmail={userEmail}
+                userInitials={userInitials}
+                onSignOut={handleSignOut}
+              />
             </>
           )}
         </div>
