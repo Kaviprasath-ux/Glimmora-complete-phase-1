@@ -1,0 +1,25 @@
+/* ==================== Amenity Card ==================== */
+.amenityCard {
+  background-color: #FFFFFF;
+  border: 1px solid #E8E4E0;
+  padding: 24px;
+  border-radius: 12px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.icon {
+  color: #A57865;
+  flex-shrink: 0;
+}
+
+.title {
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: #2C2C2C;
+  margin: 0;
+}

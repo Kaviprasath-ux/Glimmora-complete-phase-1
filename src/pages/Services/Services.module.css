@@ -1,0 +1,323 @@
+/* ==================== Page Wrapper ==================== */
+.pageWrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #F9F7F5;
+}
+
+/* ==================== Breadcrumb Container ==================== */
+.breadcrumbContainer {
+  background-color: #FFFFFF;
+  padding: 20px 48px;
+  border-bottom: 1px solid #E8E4E0;
+  margin-top: 72px;
+}
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  max-width: 1344px;
+  margin: 0 auto;
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: #5C5C5C;
+}
+
+.breadcrumb svg {
+  color: #B8B8B8;
+  flex-shrink: 0;
+}
+
+.breadcrumbLink {
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.breadcrumbLink:hover {
+  color: #A57865;
+}
+
+.breadcrumbCurrent {
+  color: #2C2C2C;
+  font-weight: 500;
+}
+
+/* ==================== Hero Section ==================== */
+.heroSection {
+  background: linear-gradient(135deg, #A57865 0%, #8B6450 100%);
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.heroContent {
+  text-align: center;
+  color: #FFFFFF;
+  z-index: 2;
+  max-width: 800px;
+  padding: 0 48px;
+}
+
+.heroTitle {
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-size: 48px;
+  font-weight: 700;
+  color: #FFFFFF;
+  line-height: 56px;
+  margin: 0 0 16px 0;
+}
+
+.heroSubtitle {
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  color: #FFFFFF;
+  opacity: 0.95;
+  line-height: 28px;
+  margin: 0 0 32px 0;
+}
+
+.heroCTA {
+  height: 52px;
+  padding: 0 32px;
+  background-color: #FFFFFF;
+  color: #A57865;
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.heroCTA:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* ==================== Services Section ==================== */
+.servicesSection {
+  background-color: #F9F7F5;
+  padding: 64px 48px;
+}
+
+.servicesGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  max-width: 1344px;
+  margin: 0 auto;
+}
+
+/* ==================== Featured Section ==================== */
+.featuredSection {
+  background-color: #FFFFFF;
+  padding: 80px 48px;
+}
+
+.featuredContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: center;
+  max-width: 1344px;
+  margin: 0 auto;
+}
+
+.featuredImage {
+  width: 100%;
+  height: 500px;
+  background: linear-gradient(135deg, #A57865 0%, #8B6450 100%);
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.featuredContent {
+  display: flex;
+  flex-direction: column;
+}
+
+.featuredTag {
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #A57865;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.featuredTitle {
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-size: 36px;
+  font-weight: 700;
+  color: #2C2C2C;
+  line-height: 44px;
+  margin: 0 0 20px 0;
+}
+
+.featuredDescription {
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: #5C5C5C;
+  line-height: 28px;
+  margin: 0 0 32px 0;
+}
+
+.featuresList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 32px;
+}
+
+.featureItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  color: #2C2C2C;
+}
+
+.featureItem svg {
+  color: #27AE60;
+  flex-shrink: 0;
+}
+
+.featuredCTA {
+  height: 52px;
+  padding: 0 32px;
+  background-color: #A57865;
+  color: #FFFFFF;
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  align-self: flex-start;
+}
+
+.featuredCTA:hover {
+  background-color: #8B6450;
+}
+
+/* ==================== Amenities Section ==================== */
+.amenitiesSection {
+  background-color: #F9F7F5;
+  padding: 64px 48px;
+}
+
+.amenitiesContainer {
+  max-width: 1344px;
+  margin: 0 auto;
+}
+
+.amenitiesHeader {
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  color: #2C2C2C;
+  text-align: center;
+  margin: 0 0 16px 0;
+}
+
+.amenitiesSubtitle {
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: #5C5C5C;
+  text-align: center;
+  margin: 0 0 48px 0;
+}
+
+.amenitiesGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+/* ==================== CTA Banner ==================== */
+.ctaBanner {
+  background: linear-gradient(135deg, #A57865 0%, #8B6450 100%);
+  padding: 64px 48px;
+  text-align: center;
+  color: #FFFFFF;
+}
+
+.ctaTitle {
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-size: 36px;
+  font-weight: 700;
+  color: #FFFFFF;
+  margin: 0 0 16px 0;
+}
+
+.ctaSubtitle {
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  color: #FFFFFF;
+  opacity: 0.95;
+  margin: 0 0 32px 0;
+}
+
+.ctaButtons {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+}
+
+.browsRoomsButton {
+  height: 52px;
+  padding: 0 32px;
+  background-color: #FFFFFF;
+  color: #A57865;
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.browsRoomsButton:hover {
+  transform: translateY(-2px);
+}
+
+.contactButton {
+  height: 52px;
+  padding: 0 32px;
+  background-color: transparent;
+  border: 2px solid #FFFFFF;
+  color: #FFFFFF;
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.contactButton:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}

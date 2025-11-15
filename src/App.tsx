@@ -8,18 +8,22 @@
 // import RoomDetails from './components/RoomDetails';
 // import GuestDetails from './components/Booking/GuestDetails';
 // import Payment from './components/Booking/Payment/Payment';
-import Confirmation from './components/Booking/Confirmation/Confirmation';
+// import Confirmation from './components/Booking/Confirmation/Confirmation';
+import Services from './pages/Services';
 import './App.css';
 
 function App() {
-  // Showing Confirmation (Booking Step 3) page - Success page after booking
+  // Showing Services page - Showcasing all hotel amenities and services
   // Toggle isAuthenticated to test both states
 
   // LOGGED-IN STATE (Shows new avatar dropdown design):
-  return <Confirmation isAuthenticated={true} user={{ firstName: 'John', lastName: 'Doe', email: 'john.doe@glimmora.com' }} />;
+  return <Services isAuthenticated={true} user={{ firstName: 'John', lastName: 'Doe', email: 'john.doe@glimmora.com' }} />;
 
   // UNLOGGED STATE (Uncomment to test):
-  // return <Confirmation isAuthenticated={false} />;
+  // return <Services isAuthenticated={false} />;
+
+  // CONFIRMATION PAGE (Uncomment to view):
+  // return <Confirmation isAuthenticated={true} user={{ firstName: 'John', lastName: 'Doe', email: 'john.doe@glimmora.com' }} />;
 
   // PAYMENT PAGE (Uncomment to view):
   // return <Payment isAuthenticated={true} user={{ firstName: 'John', lastName: 'Doe', email: 'john.doe@glimmora.com' }} />;
