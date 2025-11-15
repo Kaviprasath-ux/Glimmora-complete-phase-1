@@ -77,6 +77,14 @@ const Navigation: React.FC<NavigationProps> = ({
             >
               Contact
             </a>
+            <a
+              href="/pre-check-in"
+              className={`${styles.navItem} ${
+                activeTab === 'pre-checkin' ? styles.navItemActive : ''
+              }`}
+            >
+              Pre Check-in
+            </a>
           </div>
         </div>
 

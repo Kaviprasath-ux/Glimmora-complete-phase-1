@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { ChevronDown, LayoutDashboard, Calendar, Settings, LogOut } from 'lucide-react';
+import { ChevronDown, LayoutDashboard, Calendar, ClipboardCheck, Settings, LogOut } from 'lucide-react';
 import styles from './AvatarDropdown.module.css';
 
 interface AvatarDropdownProps {
@@ -98,6 +98,14 @@ const AvatarDropdown: React.FC<AvatarDropdownProps> = ({
             >
               <Calendar size={18} />
               <span>My Bookings</span>
+            </button>
+
+            <button
+              className={styles.menuItem}
+              onClick={() => handleNavigation('/pre-check-in')}
+            >
+              <ClipboardCheck size={18} />
+              <span>Pre Check-in</span>
             </button>
 
             <button
