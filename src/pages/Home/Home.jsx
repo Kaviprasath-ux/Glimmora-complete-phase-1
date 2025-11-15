@@ -4,6 +4,12 @@ import { useApp } from '../../context/AppContext';
 import Navigation from '../../components/Home/Navigation';
 import Footer from '../../components/Home/Footer';
 import HeroSection from './sections/HeroSection';
+import SignatureExperience from './sections/SignatureExperience';
+import LuxuryAccommodations from './sections/LuxuryAccommodations';
+import PrestigeNumbers from './sections/PrestigeNumbers';
+import RefinedServices from './sections/RefinedServices';
+import GuestVoices from './sections/GuestVoices';
+import FinalInvitation from './sections/FinalInvitation';
 import styles from './Home.module.css';
 
 const Home = () => {
@@ -71,6 +77,12 @@ const Home = () => {
       {/* Main Content */}
       <main className={styles.mainContent}>
         <HeroSection />
+        <SignatureExperience />
+        <LuxuryAccommodations />
+        <PrestigeNumbers />
+        <RefinedServices />
+        <GuestVoices />
+        <FinalInvitation />
       </main>
 
       {/* Footer */}

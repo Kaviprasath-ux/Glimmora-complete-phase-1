@@ -1,0 +1,203 @@
+.experienceSection {
+  position: relative;
+  background: #FFF8F0;
+  overflow: hidden;
+  padding: 0;
+}
+
+.experienceContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 700px;
+}
+
+/* Left Side - Image Gallery */
+.imageGallery {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 0;
+}
+
+.mainImage {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.imageGradient1 {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #A57865 0%, #D4AF37 50%, #8B6450 100%);
+  filter: grayscale(10%) sepia(8%);
+  transition: filter 600ms ease;
+}
+
+.mainImage:hover .imageGradient1 {
+  filter: grayscale(0%) sepia(0%);
+}
+
+.imageOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 4px solid #D4AF37;
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* Secondary Images */
+.secondaryImages {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  padding: 0 20px 20px 20px;
+}
+
+.smallImage {
+  position: relative;
+  height: 280px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.imageGradient2 {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #8B6450 0%, #A57865 100%);
+  filter: grayscale(10%) sepia(8%);
+  transition: filter 600ms ease;
+}
+
+.imageGradient3 {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #D4AF37 0%, #A57865 100%);
+  filter: grayscale(10%) sepia(8%);
+  transition: filter 600ms ease;
+}
+
+.smallImage:hover .imageGradient2,
+.smallImage:hover .imageGradient3 {
+  filter: grayscale(0%) sepia(0%);
+}
+
+/* Right Side - Content */
+.contentArea {
+  padding: 120px 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Section Badge */
+.sectionBadge {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 24px;
+}
+
+.goldLine {
+  width: 60px;
+  height: 2px;
+  background: #D4AF37;
+  margin-bottom: 16px;
+}
+
+.sectionBadge span {
+  font-size: 11px;
+  font-weight: 600;
+  color: #A57865;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+/* Section Title */
+.sectionTitle {
+  font-family: 'Playfair Display', 'Cormorant Garamond', serif;
+  font-size: 52px;
+  font-weight: 400;
+  color: #2C2C2C;
+  line-height: 1.2;
+  letter-spacing: -1px;
+  margin-bottom: 32px;
+}
+
+/* Description */
+.description {
+  font-size: 18px;
+  font-weight: 300;
+  color: #5C5C5C;
+  line-height: 1.8;
+  max-width: 520px;
+  margin-bottom: 48px;
+}
+
+/* Features List */
+.featuresList {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-bottom: 56px;
+}
+
+.featureItem {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 16px;
+  font-weight: 400;
+  color: #2C2C2C;
+  cursor: pointer;
+  transition: all 300ms ease;
+}
+
+.checkIcon {
+  color: #D4AF37;
+  flex-shrink: 0;
+}
+
+.featureItem:hover {
+  color: #A57865;
+}
+
+.featureItem:hover .checkIcon {
+  transform: scale(1.2);
+}
+
+/* CTA Button */
+.ctaButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background: transparent;
+  border: none;
+  padding: 0;
+  color: #A57865;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 300ms ease;
+  align-self: flex-start;
+}
+
+.ctaButton:hover {
+  color: #8B6450;
+}
+
+.ctaButton span {
+  text-decoration: underline;
+  text-decoration-color: transparent;
+  text-underline-offset: 4px;
+  transition: text-decoration-color 300ms ease;
+}
+
+.ctaButton:hover span {
+  text-decoration-color: currentColor;
+}
