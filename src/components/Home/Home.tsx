@@ -14,6 +14,7 @@ import HeroSection from './HeroSection';
 import RoomCard from './RoomCard';
 import AmenityCard from './AmenityCard';
 import Footer from './Footer';
+import ChatBubble from './ChatBubble';
 import styles from './Home.module.css';
 
 interface HomeProps {
@@ -178,6 +179,9 @@ const Home: React.FC<HomeProps> = ({ isAuthenticated = false, user }) => {
 
       {/* Footer */}
       <Footer />
+
+      {/* AI Chat Bubble */}
+      <ChatBubble hasUnreadMessages={isAuthenticated} />
     </div>
   );
 };
