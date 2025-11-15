@@ -4,18 +4,22 @@
 // import SignUp from './components/SignUp';
 // import Dashboard from './components/Dashboard';
 // import Home from './components/Home';
-import Rooms from './components/Rooms';
+// import Rooms from './components/Rooms';
+import RoomDetails from './components/RoomDetails';
 import './App.css';
 
 function App() {
-  // Showing Rooms page
+  // Showing Room Details page
   // Toggle isAuthenticated to test both states
 
   // LOGGED-IN STATE (Shows new avatar dropdown design):
-  return <Rooms isAuthenticated={true} user={{ firstName: 'John', lastName: 'Doe', email: 'john.doe@glimmora.com' }} />;
+  return <RoomDetails isAuthenticated={true} user={{ firstName: 'John', lastName: 'Doe', email: 'john.doe@glimmora.com' }} />;
 
   // UNLOGGED STATE (Uncomment to test):
-  // return <Rooms isAuthenticated={false} />;
+  // return <RoomDetails isAuthenticated={false} />;
+
+  // ROOMS PAGE (Uncomment to view):
+  // return <Rooms isAuthenticated={true} user={{ firstName: 'John', lastName: 'Doe', email: 'john.doe@glimmora.com' }} />;
 
   // HOME PAGE (Uncomment to view):
   // return <Home isAuthenticated={true} user={{ firstName: 'John', lastName: 'Doe', email: 'john.doe@glimmora.com' }} />;

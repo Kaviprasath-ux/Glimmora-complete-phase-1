@@ -1,0 +1,234 @@
+/* ==================== Modal Overlay ==================== */
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.95);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 200ms ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* ==================== Close Button ==================== */
+.closeButton {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 200ms ease;
+  z-index: 2002;
+}
+
+.closeButton:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+/* ==================== Main Image ==================== */
+.mainImageContainer {
+  max-width: 1200px;
+  max-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mainImage {
+  max-width: 1200px;
+  max-height: 80vh;
+  width: 1200px;
+  height: 675px;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+/* Generate gradient placeholders for all 8 images */
+.mainImage[data-index="1"] {
+  background: linear-gradient(135deg, #A57865 0%, #8B6450 100%);
+}
+
+.mainImage[data-index="2"] {
+  background: linear-gradient(135deg, #8B6450 0%, #A57865 100%);
+}
+
+.mainImage[data-index="3"] {
+  background: linear-gradient(135deg, #A57865 30%, #8B6450 100%);
+}
+
+.mainImage[data-index="4"] {
+  background: linear-gradient(135deg, #8B6450 30%, #A57865 100%);
+}
+
+.mainImage[data-index="5"] {
+  background: linear-gradient(135deg, #A57865 50%, #8B6450 100%);
+}
+
+.mainImage[data-index="6"] {
+  background: linear-gradient(135deg, #8B6450 50%, #A57865 100%);
+}
+
+.mainImage[data-index="7"] {
+  background: linear-gradient(135deg, #A57865 70%, #8B6450 100%);
+}
+
+.mainImage[data-index="8"] {
+  background: linear-gradient(135deg, #8B6450 70%, #A57865 100%);
+}
+
+/* ==================== Navigation Arrows ==================== */
+.navArrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 200ms ease;
+  z-index: 2001;
+}
+
+.navArrow:hover:not(:disabled) {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.navArrow:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.leftArrow {
+  left: 20px;
+}
+
+.rightArrow {
+  right: 20px;
+}
+
+/* ==================== Thumbnail Strip ==================== */
+.thumbnailStrip {
+  position: absolute;
+  bottom: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  padding: 0 20px;
+  max-width: 90%;
+}
+
+.thumbnailStrip::-webkit-scrollbar {
+  height: 4px;
+}
+
+.thumbnailStrip::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 2px;
+}
+
+.thumbnailStrip::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 2px;
+}
+
+.thumbnailStrip::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+/* ==================== Thumbnail ==================== */
+.thumbnail {
+  width: 100px;
+  height: 70px;
+  min-width: 100px;
+  object-fit: cover;
+  border-radius: 6px;
+  cursor: pointer;
+  opacity: 0.6;
+  border: 2px solid transparent;
+  transition: all 200ms ease;
+}
+
+.thumbnail:hover {
+  opacity: 0.8;
+}
+
+.activeThumbnail {
+  opacity: 1;
+  border-color: #A57865;
+}
+
+/* Thumbnail gradients */
+.thumbnail[data-index="1"] {
+  background: linear-gradient(135deg, #A57865 0%, #8B6450 100%);
+}
+
+.thumbnail[data-index="2"] {
+  background: linear-gradient(135deg, #8B6450 0%, #A57865 100%);
+}
+
+.thumbnail[data-index="3"] {
+  background: linear-gradient(135deg, #A57865 30%, #8B6450 100%);
+}
+
+.thumbnail[data-index="4"] {
+  background: linear-gradient(135deg, #8B6450 30%, #A57865 100%);
+}
+
+.thumbnail[data-index="5"] {
+  background: linear-gradient(135deg, #A57865 50%, #8B6450 100%);
+}
+
+.thumbnail[data-index="6"] {
+  background: linear-gradient(135deg, #8B6450 50%, #A57865 100%);
+}
+
+.thumbnail[data-index="7"] {
+  background: linear-gradient(135deg, #A57865 70%, #8B6450 100%);
+}
+
+.thumbnail[data-index="8"] {
+  background: linear-gradient(135deg, #8B6450 70%, #A57865 100%);
+}
+
+/* ==================== Image Counter ==================== */
+.imageCounter {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.6);
+  color: #FFFFFF;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+}

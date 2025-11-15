@@ -1,0 +1,92 @@
+/* ==================== Gallery Container ==================== */
+.galleryContainer {
+  background-color: #F9F7F5;
+  padding: 48px;
+  max-width: 1344px;
+  margin: 0 auto;
+}
+
+/* ==================== Gallery Grid ==================== */
+.galleryGrid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 16px;
+  height: 600px;
+}
+
+/* ==================== Main Image ==================== */
+.mainImage {
+  grid-row: 1 / 3;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+  transition: transform 200ms ease;
+}
+
+.mainImage:hover {
+  transform: scale(1.01);
+}
+
+/* ==================== Secondary Images ==================== */
+.secondaryImage {
+  width: 100%;
+  height: 292px;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+  transition: transform 200ms ease;
+}
+
+.secondaryImage:hover {
+  transform: scale(1.02);
+}
+
+/* ==================== Image Placeholder ==================== */
+.imagePlaceholder {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.imagePlaceholder[data-index="1"] {
+  background: linear-gradient(135deg, #A57865 0%, #8B6450 100%);
+}
+
+.imagePlaceholder[data-index="2"] {
+  background: linear-gradient(135deg, #8B6450 0%, #A57865 100%);
+}
+
+.imagePlaceholder[data-index="3"] {
+  background: linear-gradient(135deg, #A57865 30%, #8B6450 100%);
+}
+
+/* ==================== View All Button ==================== */
+.viewAllButton {
+  position: absolute;
+  bottom: 16px;
+  right: 16px;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: #2C2C2C;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: all 200ms ease;
+  z-index: 10;
+}
+
+.viewAllButton:hover {
+  background-color: #FFFFFF;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+}
