@@ -32,11 +32,11 @@ const HeroSection: React.FC<HeroSectionProps> = ({
         loop
         muted
         playsInline
-        poster="/hero-poster.jpg" // Fallback image while loading
+        poster="/hero-poster.jpg"
+        onError={(e) => console.error('Video failed to load:', e)}
       >
         <source src="/videos/hotel-promo.mp4" type="video/mp4" />
         <source src="/videos/hotel-promo.webm" type="video/webm" />
-        {/* Fallback for browsers that don't support video */}
         Your browser does not support the video tag.
       </video>
 
