@@ -1,5 +1,7 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { ChevronRight, Phone, Mail, MapPin, Facebook, Instagram, Twitter, Linkedin } from 'lucide-react';
+import { useApp } from '../../context/AppContext';
 import Navigation from '../../components/Home/Navigation';
 import Footer from '../../components/Home/Footer';
 import ContactCard from '../../components/Contact/ContactCard';
@@ -17,6 +19,14 @@ interface ContactProps {
 }
 
 const Contact: React.FC<ContactProps> = ({ isAuthenticated, user }) => {
+  const { logout } = useApp();
+  const navigate = useNavigate();
+
+  const handleSignOut = () => {
+    logout();
+    navigate('/');
+  };
+
   const handlePhoneClick = () => {
     window.location.href = 'tel:+97141234567';
   };
@@ -38,6 +48,7 @@ const Contact: React.FC<ContactProps> = ({ isAuthenticated, user }) => {
         userEmail={user?.email}
         userInitials={user ? `${user.firstName[0]}${user.lastName[0]}` : undefined}
         activeTab="contact"
+        onSignOut={handleSignOut}
       />
 
       {/* Breadcrumb */}

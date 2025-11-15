@@ -1,9 +1,11 @@
 import React, { useState, useMemo } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Search, ArrowUpDown, ChevronDown, Grid3x3 } from 'lucide-react';
+import { useApp } from '../../context/AppContext';
 import Navigation from '../Home/Navigation';
 import Footer from '../Home/Footer';
 import ChatBubble from '../Home/ChatBubble';
-import FiltersPanel, { Filters } from './FiltersPanel';
+import FiltersPanel, { type Filters } from './FiltersPanel';
 import RoomCard from './RoomCard';
 import Pagination from './Pagination';
 import styles from './Rooms.module.css';
@@ -425,11 +427,18 @@ const sampleRooms: Room[] = [
 ];
 
 const Rooms: React.FC<RoomsProps> = ({ isAuthenticated = false, user }) => {
+  const { logout } = useApp();
+  const navigate = useNavigate();
   const userName = user?.firstName || 'Guest';
   const userEmail = user?.email || 'user@glimmora.com';
   const userInitials = user
     ? `${user.firstName?.[0] || ''}${user.lastName?.[0] || ''}`.toUpperCase()
     : 'G';
+
+  const handleSignOut = () => {
+    logout();
+    navigate('/');
+  };
 
   const [filters, setFilters] = useState<Filters>({
     priceRange: [50, 500],
@@ -580,6 +589,7 @@ const Rooms: React.FC<RoomsProps> = ({ isAuthenticated = false, user }) => {
         userEmail={userEmail}
         userInitials={userInitials}
         notificationCount={3}
+        onSignOut={handleSignOut}
         activeTab="rooms"
       />
 

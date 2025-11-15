@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { ChevronRight } from 'lucide-react';
+import { useApp } from '../../context/AppContext';
 import Navigation from '../../components/Home/Navigation';
 import Footer from '../../components/Home/Footer';
 import BookingListView from '../../components/PreCheckIn/BookingListView';
@@ -33,6 +35,14 @@ interface Booking {
 }
 
 const PreCheckIn: React.FC<PreCheckInProps> = ({ isAuthenticated, user }) => {
+  const { logout } = useApp();
+  const navigate = useNavigate();
+
+  const handleSignOut = () => {
+    logout();
+    navigate('/');
+  };
+
   // State management
   const [selectedBooking, setSelectedBooking] = useState<Booking | null>(null);
   const [preCheckInCompleted, setPreCheckInCompleted] = useState(false);
@@ -129,6 +139,7 @@ const PreCheckIn: React.FC<PreCheckInProps> = ({ isAuthenticated, user }) => {
         userEmail={user?.email}
         userInitials={user ? `${user.firstName[0]}${user.lastName[0]}` : undefined}
         activeTab="pre-checkin"
+        onSignOut={handleSignOut}
       />
 
       {/* Breadcrumb */}

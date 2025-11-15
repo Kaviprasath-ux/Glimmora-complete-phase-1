@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import type { FormEvent, ChangeEvent } from 'react';
+import { Link } from 'react-router-dom';
 import { Lock, Mail, ArrowLeft } from 'lucide-react';
 import EmailSentSuccess from './EmailSentSuccess';
+import logoImage from '../../assets/logo 1.png';
 import styles from './ForgotPassword.module.css';
 
 const ForgotPassword: React.FC = () => {
@@ -83,11 +85,13 @@ const ForgotPassword: React.FC = () => {
     <div className={styles.container}>
       <header className={styles.header}>
         <div className={styles.headerContent}>
-          <div className={styles.logo}>GLIMMORA</div>
+          <Link to="/" className={styles.logoLink}>
+            <img src={logoImage} alt="Glimmora Hotel" className={styles.logo} />
+          </Link>
           <nav className={styles.nav}>
-            <a href="#home" className={styles.navLink}>Home</a>
-            <a href="#rooms" className={styles.navLink}>Rooms</a>
-            <a href="#contact" className={styles.navLink}>Contact</a>
+            <Link to="/" className={styles.navLink}>Home</Link>
+            <Link to="/rooms" className={styles.navLink}>Rooms</Link>
+            <Link to="/contact" className={styles.navLink}>Contact</Link>
           </nav>
         </div>
       </header>
@@ -146,10 +150,10 @@ const ForgotPassword: React.FC = () => {
             </button>
           </form>
 
-          <a href="/login" className={styles.backLink}>
+          <Link to="/login" className={styles.backLink}>
             <ArrowLeft size={16} strokeWidth={2} />
             <span>Back to Sign In</span>
-          </a>
+          </Link>
         </div>
       </main>
     </div>

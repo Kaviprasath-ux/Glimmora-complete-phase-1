@@ -2,6 +2,7 @@ import React from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Bell } from 'lucide-react';
 import AvatarDropdown from './AvatarDropdown';
+import logoImage from '../../assets/logo 1.png';
 import styles from './Home.module.css';
 
 interface NavigationProps {
@@ -54,8 +55,8 @@ const Navigation: React.FC<NavigationProps> = ({
       <div className={styles.navContent}>
         {/* Left Side - Logo */}
         <div className={styles.navLeft}>
-          <Link to="/" className={styles.logo}>
-            GLIMMORA
+          <Link to="/" className={styles.logoLink}>
+            <img src={logoImage} alt="Glimmora Hotel" className={styles.logo} />
           </Link>
 
           {/* Middle - Nav Items (Same for both logged and unlogged) */}

@@ -13,6 +13,7 @@ import {
   ClipboardCheck,
   MessageCircle,
 } from 'lucide-react';
+import { useApp } from '../../context/AppContext';
 import Navigation from './Navigation';
 import HeroSection from './HeroSection';
 import RoomCard from './RoomCard';
@@ -31,6 +32,7 @@ interface HomeProps {
 }
 
 const Home: React.FC<HomeProps> = ({ isAuthenticated = false, user }) => {
+  const { logout } = useApp();
   const userName = user?.firstName || 'Guest';
   const userEmail = user?.email || 'user@glimmora.com';
   const userInitials = user
@@ -112,9 +114,8 @@ const Home: React.FC<HomeProps> = ({ isAuthenticated = false, user }) => {
   const navigate = useNavigate();
 
   const handleSignOut = () => {
-    console.log('User signed out');
-    // TODO: Implement actual sign out logic
-    // Clear auth token, redirect to home, etc.
+    logout();
+    navigate('/');
   };
 
   const handleViewAllRooms = () => {

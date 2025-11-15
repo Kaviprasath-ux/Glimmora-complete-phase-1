@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import type { FormEvent, ChangeEvent } from 'react';
+import { Link } from 'react-router-dom';
 import { KeyRound, Eye, EyeOff, Check, Circle } from 'lucide-react';
 import ResetPasswordSuccess from './ResetPasswordSuccess';
+import logoImage from '../../assets/logo 1.png';
 import styles from './ResetPassword.module.css';
 
 interface PasswordRequirements {
@@ -167,11 +169,13 @@ const ResetPassword: React.FC = () => {
     <div className={styles.container}>
       <header className={styles.header}>
         <div className={styles.headerContent}>
-          <div className={styles.logo}>GLIMMORA</div>
+          <Link to="/" className={styles.logoLink}>
+            <img src={logoImage} alt="Glimmora Hotel" className={styles.logo} />
+          </Link>
           <nav className={styles.nav}>
-            <a href="#home" className={styles.navLink}>Home</a>
-            <a href="#rooms" className={styles.navLink}>Rooms</a>
-            <a href="#contact" className={styles.navLink}>Contact</a>
+            <Link to="/" className={styles.navLink}>Home</Link>
+            <Link to="/rooms" className={styles.navLink}>Rooms</Link>
+            <Link to="/contact" className={styles.navLink}>Contact</Link>
           </nav>
         </div>
       </header>
