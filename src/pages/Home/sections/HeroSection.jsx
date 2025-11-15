@@ -91,8 +91,8 @@ const HeroSection = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3, duration: 0.8 }}
         >
-          <Sparkles size={16} />
-          <span>Luxury Redefined</span>
+          <Sparkles size={14} />
+          <span>SINCE 2009 - AWARD WINNING LUXURY</span>
         </motion.div>
 
         {/* Main Title with Letter Animation */}
@@ -134,7 +134,7 @@ const HeroSection = () => {
                 }
               }}
             >
-              {'Experience Luxury'.split('').map((char, index) => (
+              {'WHERE LUXURY'.split('').map((char, index) => (
                 <motion.span
                   key={index}
                   variants={{
@@ -147,9 +147,21 @@ const HeroSection = () => {
                 </motion.span>
               ))}
               <br />
-              {'Redefined'.split('').map((char, index) => (
+              {'MEETS '.split('').map((char, index) => (
                 <motion.span
                   key={index + 100}
+                  variants={{
+                    hidden: { opacity: 0, y: 50 },
+                    visible: { opacity: 1, y: 0 }
+                  }}
+                  style={{ display: 'inline-block' }}
+                >
+                  {char === ' ' ? '\u00A0' : char}
+                </motion.span>
+              ))}
+              {'HERITAGE'.split('').map((char, index) => (
+                <motion.span
+                  key={index + 200}
                   variants={{
                     hidden: { opacity: 0, y: 50 },
                     visible: { opacity: 1, y: 0 }
@@ -174,7 +186,7 @@ const HeroSection = () => {
           {isAuthenticated ? (
             <>Your next adventure awaits</>
           ) : (
-            <>Where every moment becomes an unforgettable memory</>
+            <>Experience timeless elegance in the heart of the city</>
           )}
         </motion.p>
 
@@ -266,6 +278,29 @@ const HeroSection = () => {
               <Search size={20} />
               <span>Search</span>
             </motion.button>
+          </div>
+        </motion.div>
+
+        {/* Trust Indicators */}
+        <motion.div
+          className={styles.trustIndicators}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 1.8, duration: 0.8 }}
+        >
+          <div className={styles.trustItem}>
+            <Sparkles size={16} />
+            <span>4.9 Guest Rating</span>
+          </div>
+          <span className={styles.trustDivider}>•</span>
+          <div className={styles.trustItem}>
+            <Sparkles size={16} />
+            <span>Award Winner</span>
+          </div>
+          <span className={styles.trustDivider}>•</span>
+          <div className={styles.trustItem}>
+            <Sparkles size={16} />
+            <span>10K+ Stays</span>
           </div>
         </motion.div>
 
