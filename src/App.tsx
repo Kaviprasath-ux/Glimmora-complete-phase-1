@@ -10,18 +10,22 @@
 // import Payment from './components/Booking/Payment/Payment';
 // import Confirmation from './components/Booking/Confirmation/Confirmation';
 // import Services from './pages/Services';
-import Contact from './pages/Contact';
+// import Contact from './pages/Contact';
+import PreCheckIn from './pages/PreCheckIn';
 import './App.css';
 
 function App() {
-  // Showing Contact page - Get in touch with contact form and FAQ
+  // Showing Pre Check-in page - Smart adaptive page with 4 different views
   // Toggle isAuthenticated to test both states
 
-  // LOGGED-IN STATE (Shows new avatar dropdown design):
-  return <Contact isAuthenticated={true} user={{ firstName: 'John', lastName: 'Doe', email: 'john.doe@glimmora.com' }} />;
+  // LOGGED-IN STATE (Shows booking list view):
+  return <PreCheckIn isAuthenticated={true} user={{ firstName: 'John', lastName: 'Doe', email: 'john.doe@glimmora.com' }} />;
 
-  // UNLOGGED STATE (Uncomment to test):
-  // return <Contact isAuthenticated={false} />;
+  // UNLOGGED STATE (Shows lookup form view - Uncomment to test):
+  // return <PreCheckIn isAuthenticated={false} />;
+
+  // CONTACT PAGE (Uncomment to view):
+  // return <Contact isAuthenticated={true} user={{ firstName: 'John', lastName: 'Doe', email: 'john.doe@glimmora.com' }} />;
 
   // SERVICES PAGE (Uncomment to view):
   // return <Services isAuthenticated={true} user={{ firstName: 'John', lastName: 'Doe', email: 'john.doe@glimmora.com' }} />;

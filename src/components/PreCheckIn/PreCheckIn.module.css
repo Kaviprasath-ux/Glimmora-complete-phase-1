@@ -1,0 +1,952 @@
+/* ==================== Booking List View ==================== */
+.bookingListContainer {
+  background-color: #F9F7F5;
+  padding: 64px 48px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.welcomeTitle {
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  color: #2C2C2C;
+  margin: 0 0 8px 0;
+}
+
+.welcomeSubtitle {
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: #5C5C5C;
+  margin: 0 0 32px 0;
+}
+
+.bookingsList {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* ==================== Booking Card ==================== */
+.bookingCard {
+  background-color: #FFFFFF;
+  border: 1px solid #E8E4E0;
+  border-radius: 12px;
+  padding: 24px;
+  display: flex;
+  gap: 24px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.bookingCard:hover {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.roomImage {
+  width: 160px;
+  height: 120px;
+  background: linear-gradient(135deg, #A57865 0%, #8B6450 100%);
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+
+.bookingDetails {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.roomName {
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  color: #2C2C2C;
+  margin: 0 0 12px 0;
+}
+
+.bookingInfoRows {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.infoRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: #5C5C5C;
+}
+
+.infoRow svg {
+  color: #A57865;
+  flex-shrink: 0;
+}
+
+.confirmationNumber {
+  font-family: 'Courier New', monospace;
+  font-size: 13px;
+  font-weight: 500;
+  color: #A57865;
+  margin-bottom: 16px;
+}
+
+.availabilityBadge {
+  background-color: #F0FDF4;
+  border: 1px solid #27AE60;
+  padding: 12px;
+  border-radius: 8px;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.availabilityBadge svg {
+  color: #27AE60;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.badgeTitle {
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  color: #27AE60;
+  line-height: 18px;
+}
+
+.badgeText {
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  color: #27AE60;
+  line-height: 18px;
+}
+
+.startButton {
+  height: 44px;
+  padding: 0 24px;
+  background-color: #A57865;
+  color: #FFFFFF;
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  align-self: flex-start;
+}
+
+.startButton:hover {
+  background-color: #8B6450;
+}
+
+/* ==================== Empty State ==================== */
+.emptyState {
+  background-color: #FFFFFF;
+  border: 1px solid #E8E4E0;
+  border-radius: 12px;
+  padding: 64px;
+  text-align: center;
+}
+
+.emptyIcon {
+  color: #A57865;
+  margin: 0 auto 24px;
+}
+
+.emptyTitle {
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  color: #2C2C2C;
+  margin: 0 0 12px 0;
+}
+
+.emptyDescription {
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: #5C5C5C;
+  line-height: 24px;
+  margin: 0 0 32px 0;
+}
+
+.browseRoomsButton {
+  height: 48px;
+  padding: 0 32px;
+  background-color: #A57865;
+  color: #FFFFFF;
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.browseRoomsButton:hover {
+  background-color: #8B6450;
+}
+
+/* ==================== Lookup Form View ==================== */
+.lookupContainer {
+  background-color: #F9F7F5;
+  padding: 64px 48px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.lookupCard {
+  background-color: #FFFFFF;
+  border: 1px solid #E8E4E0;
+  border-radius: 12px;
+  padding: 48px;
+}
+
+.lookupTitle {
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+  color: #2C2C2C;
+  text-align: center;
+  margin: 0 0 8px 0;
+}
+
+.lookupSubtitle {
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: #808080;
+  text-align: center;
+  margin: 0 0 32px 0;
+}
+
+.lookupForm {
+  display: flex;
+  flex-direction: column;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.label {
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: #2C2C2C;
+  margin-bottom: 8px;
+}
+
+.input {
+  height: 48px;
+  padding: 0 16px;
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: #2C2C2C;
+  background-color: #FFFFFF;
+  border: 1px solid #E8E4E0;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  outline: none;
+}
+
+.input::placeholder {
+  color: #B8B8B8;
+}
+
+.input:focus {
+  border-color: #A57865;
+}
+
+.findButton {
+  width: 100%;
+  height: 52px;
+  background-color: #A57865;
+  color: #FFFFFF;
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-bottom: 24px;
+}
+
+.findButton:hover:not(:disabled) {
+  background-color: #8B6450;
+}
+
+.findButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.spinner {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ==================== Error/Warning/Info Boxes ==================== */
+.errorBox,
+.warningBox,
+.infoBox {
+  padding: 16px;
+  border-radius: 8px;
+  margin-top: 24px;
+}
+
+.errorBox {
+  background-color: #FEF2F2;
+  border: 1px solid #DC3545;
+}
+
+.warningBox {
+  background-color: #FEF9E7;
+  border: 1px solid #F59E0B;
+}
+
+.infoBox {
+  background-color: #E0F2FE;
+  border: 1px solid #0EA5E9;
+}
+
+.errorHeader,
+.warningHeader,
+.infoHeader {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.errorHeader {
+  color: #DC3545;
+}
+
+.errorHeader svg {
+  color: #DC3545;
+  flex-shrink: 0;
+}
+
+.warningHeader {
+  color: #F59E0B;
+}
+
+.warningHeader svg {
+  color: #F59E0B;
+  flex-shrink: 0;
+}
+
+.infoHeader {
+  color: #0EA5E9;
+}
+
+.infoHeader svg {
+  color: #0EA5E9;
+  flex-shrink: 0;
+}
+
+.errorMessage,
+.warningMessage,
+.infoMessage {
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 20px;
+  margin: 0;
+}
+
+.errorMessage {
+  color: #DC3545;
+}
+
+.warningMessage {
+  color: #F59E0B;
+}
+
+.infoMessage {
+  color: #0EA5E9;
+}
+
+/* ==================== Divider ==================== */
+.divider {
+  height: 1px;
+  background-color: #E8E4E0;
+  position: relative;
+  margin: 24px 0;
+}
+
+.dividerText {
+  background-color: #FFFFFF;
+  padding: 0 16px;
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: #808080;
+}
+
+/* ==================== Sign In Section ==================== */
+.signInSection {
+  text-align: center;
+}
+
+.signInText {
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: #5C5C5C;
+  margin: 0 0 8px 0;
+}
+
+.signInLink {
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #A57865;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: block;
+}
+
+.signInLink:hover {
+  text-decoration: underline;
+}
+
+/* ==================== Pre Check-In Form ==================== */
+.formGridLayout {
+  background-color: #F9F7F5;
+  padding: 64px 48px;
+  max-width: 1344px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 48px;
+}
+
+.formColumn {
+  display: flex;
+  flex-direction: column;
+}
+
+.formContainer {
+  background-color: #FFFFFF;
+  border: 1px solid #E8E4E0;
+  border-radius: 12px;
+  padding: 40px;
+}
+
+.formTitle {
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+  color: #2C2C2C;
+  margin: 0 0 8px 0;
+}
+
+.formSubtitle {
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: #808080;
+  margin: 0 0 32px 0;
+}
+
+.sectionHeader {
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  color: #2C2C2C;
+  margin: 0 0 20px 0;
+}
+
+.inputReadOnly {
+  height: 48px;
+  padding: 0 16px;
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: #5C5C5C;
+  background-color: #F9F7F5;
+  border: 1px solid #E8E4E0;
+  border-radius: 8px;
+  cursor: not-allowed;
+}
+
+.selectWrapper {
+  position: relative;
+}
+
+.select {
+  width: 100%;
+  height: 48px;
+  padding: 0 40px 0 16px;
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: #2C2C2C;
+  background-color: #FFFFFF;
+  border: 1px solid #E8E4E0;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  outline: none;
+  appearance: none;
+  cursor: pointer;
+}
+
+.select:focus {
+  border-color: #A57865;
+}
+
+.selectIcon {
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #5C5C5C;
+  pointer-events: none;
+}
+
+.textarea {
+  width: 100%;
+  padding: 12px 16px;
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: #2C2C2C;
+  background-color: #FFFFFF;
+  border: 1px solid #E8E4E0;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  outline: none;
+  resize: vertical;
+  min-height: 80px;
+  max-height: 200px;
+}
+
+.textarea::placeholder {
+  color: #B8B8B8;
+}
+
+.textarea:focus {
+  border-color: #A57865;
+}
+
+.errorText {
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  color: #DC3545;
+  margin-top: 4px;
+}
+
+/* ==================== Checkbox ==================== */
+.checkboxGroup {
+  margin-bottom: 32px;
+}
+
+.checkboxLabel {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.hiddenCheckbox {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.customCheckbox {
+  width: 18px;
+  height: 18px;
+  border: 2px solid #E8E4E0;
+  border-radius: 4px;
+  background-color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.hiddenCheckbox:checked + .customCheckbox {
+  background-color: #A57865;
+  border-color: #A57865;
+}
+
+.customCheckbox svg {
+  color: #FFFFFF;
+}
+
+.checkboxText {
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: #2C2C2C;
+  line-height: 22px;
+}
+
+.termsLink {
+  color: #A57865;
+  text-decoration: underline;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.termsLink:hover {
+  color: #8B6450;
+}
+
+/* ==================== Complete Button ==================== */
+.completeButton {
+  width: 100%;
+  height: 52px;
+  background-color: #A57865;
+  color: #FFFFFF;
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.completeButton:hover:not(:disabled) {
+  background-color: #8B6450;
+}
+
+.completeButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* ==================== Summary Column ==================== */
+.summaryColumn {
+  display: flex;
+  flex-direction: column;
+}
+
+.summaryCard {
+  background-color: #FFFFFF;
+  border: 1px solid #E8E4E0;
+  border-radius: 12px;
+  padding: 32px;
+  position: sticky;
+  top: 104px;
+  height: fit-content;
+}
+
+.summaryHeader {
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  color: #2C2C2C;
+  margin: 0 0 24px 0;
+}
+
+.summaryRoomImage {
+  width: 100%;
+  height: 160px;
+  background: linear-gradient(135deg, #A57865 0%, #8B6450 100%);
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.summaryRoomName {
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: #2C2C2C;
+  margin: 0 0 16px 0;
+}
+
+.summaryDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.summaryRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.summaryLabel {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: #5C5C5C;
+}
+
+.summaryLabel svg {
+  color: #A57865;
+  flex-shrink: 0;
+}
+
+.summaryValue {
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: #2C2C2C;
+}
+
+.summaryConfirmation {
+  font-family: 'Courier New', monospace;
+  font-size: 13px;
+  font-weight: 600;
+  color: #A57865;
+  margin: 4px 0 24px 0;
+}
+
+.summaryDivider {
+  height: 1px;
+  background-color: #E8E4E0;
+  margin: 24px 0;
+}
+
+/* ==================== Help Section ==================== */
+.helpSection {
+  margin-top: 0;
+}
+
+.helpHeader {
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: #2C2C2C;
+  margin: 0 0 12px 0;
+}
+
+.helpDescription {
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: #5C5C5C;
+  line-height: 22px;
+  margin: 0 0 16px 0;
+}
+
+.contactItems {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.contactItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: #A57865;
+  text-decoration: none;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.contactItem svg {
+  flex-shrink: 0;
+}
+
+.contactItem:hover {
+  text-decoration: underline;
+}
+
+/* ==================== Success View ==================== */
+.successContainer {
+  background-color: #F9F7F5;
+  padding: 64px 48px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.successCard {
+  background-color: #FFFFFF;
+  border: 1px solid #E8E4E0;
+  border-radius: 12px;
+  padding: 64px;
+  text-align: center;
+}
+
+.successIcon {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: #27AE60;
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 32px;
+  animation: popIn 300ms ease-out;
+}
+
+@keyframes popIn {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.successTitle {
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  color: #2C2C2C;
+  margin: 0 0 16px 0;
+}
+
+.successSubtitle {
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: #5C5C5C;
+  line-height: 24px;
+  margin: 0 0 32px 0;
+}
+
+.successDivider {
+  height: 1px;
+  background-color: #E8E4E0;
+  margin: 32px 0;
+}
+
+/* ==================== What's Next Section ==================== */
+.whatsNextSection {
+  margin-bottom: 32px;
+}
+
+.whatsNextHeader {
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  color: #2C2C2C;
+  margin: 0 0 24px 0;
+}
+
+.nextStepsList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.nextStep {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  text-align: left;
+}
+
+.nextStepIcon {
+  color: #27AE60;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.nextStep span {
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  color: #5C5C5C;
+  line-height: 22px;
+}
+
+/* ==================== Success Buttons ==================== */
+.successButtons {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+}
+
+.downloadButton,
+.homeButton {
+  height: 48px;
+  padding: 0 24px;
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.downloadButton {
+  background-color: transparent;
+  border: 1px solid #A57865;
+  color: #A57865;
+}
+
+.downloadButton:hover {
+  background-color: #F9F7F5;
+}
+
+.homeButton {
+  background-color: #A57865;
+  color: #FFFFFF;
+  border: none;
+}
+
+.homeButton:hover {
+  background-color: #8B6450;
+}

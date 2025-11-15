@@ -1,0 +1,86 @@
+/* ==================== Page Wrapper ==================== */
+.pageWrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #F9F7F5;
+}
+
+/* ==================== Breadcrumb Container ==================== */
+.breadcrumbContainer {
+  background-color: #FFFFFF;
+  padding: 20px 48px;
+  border-bottom: 1px solid #E8E4E0;
+  margin-top: 72px;
+}
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  max-width: 1344px;
+  margin: 0 auto;
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: #5C5C5C;
+}
+
+.breadcrumb svg {
+  color: #B8B8B8;
+  flex-shrink: 0;
+}
+
+.breadcrumbLink {
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.breadcrumbLink:hover {
+  color: #A57865;
+}
+
+.breadcrumbCurrent {
+  color: #2C2C2C;
+  font-weight: 500;
+}
+
+/* ==================== Hero Section ==================== */
+.heroSection {
+  background: linear-gradient(135deg, #A57865 0%, #8B6450 100%);
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.heroContent {
+  text-align: center;
+  color: #FFFFFF;
+  max-width: 700px;
+  padding: 0 48px;
+}
+
+.heroTitle {
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-size: 48px;
+  font-weight: 700;
+  color: #FFFFFF;
+  line-height: 56px;
+  margin: 0 0 16px 0;
+}
+
+.heroSubtitle {
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  color: #FFFFFF;
+  opacity: 0.95;
+  line-height: 28px;
+  margin: 0;
+}
+
+/* ==================== Main Content ==================== */
+.mainContent {
+  flex: 1;
+}
