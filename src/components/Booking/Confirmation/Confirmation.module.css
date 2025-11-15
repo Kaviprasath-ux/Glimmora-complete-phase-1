@@ -1,0 +1,585 @@
+/* ==================== Page Wrapper ==================== */
+.pageWrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #F9F7F5;
+}
+
+/* ==================== Progress Container ==================== */
+.progressContainer {
+  background-color: #F9F7F5;
+  padding: 32px 48px;
+  margin-top: 72px;
+}
+
+/* ==================== Success Section ==================== */
+.successSection {
+  background: linear-gradient(135deg, #27AE60 0%, #22954F 100%);
+  padding: 64px 48px;
+  text-align: center;
+  color: #FFFFFF;
+}
+
+.successIconContainer {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  border: 3px solid #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 24px;
+  animation: popIn 300ms ease-out;
+}
+
+@keyframes popIn {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.successTitle {
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-size: 40px;
+  font-weight: 700;
+  color: #FFFFFF;
+  line-height: 48px;
+  margin: 0 0 16px 0;
+}
+
+.successSubtitle {
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  color: #FFFFFF;
+  opacity: 0.95;
+  margin: 0 0 32px 0;
+}
+
+.confirmationNumber {
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  color: #FFFFFF;
+  background: rgba(255, 255, 255, 0.15);
+  padding: 12px 24px;
+  border-radius: 8px;
+  display: inline-block;
+  letter-spacing: 2px;
+}
+
+/* ==================== Main Content ==================== */
+.mainContent {
+  background-color: #F9F7F5;
+  padding: 48px;
+  flex: 1;
+}
+
+.container {
+  max-width: 1344px;
+  margin: 0 auto;
+}
+
+.gridLayout {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 48px;
+}
+
+/* ==================== Left Column ==================== */
+.leftColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* ==================== Cards ==================== */
+.card {
+  background-color: #FFFFFF;
+  border: 1px solid #E8E4E0;
+  border-radius: 12px;
+  padding: 32px;
+}
+
+.sectionHeader {
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  color: #2C2C2C;
+  margin: 0 0 24px 0;
+}
+
+/* ==================== Room Details ==================== */
+.roomImage {
+  width: 100%;
+  height: 200px;
+  background: linear-gradient(135deg, #A57865 0%, #8B6450 100%);
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.roomName {
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  color: #2C2C2C;
+  line-height: 28px;
+  margin: 0 0 8px 0;
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-bottom: 20px;
+}
+
+.ratingText {
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  color: #2C2C2C;
+}
+
+.reviewCount {
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  color: #5C5C5C;
+}
+
+/* ==================== Subsection Header ==================== */
+.subsectionHeader {
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: #2C2C2C;
+  margin: 20px 0 16px 0;
+}
+
+/* ==================== Info Rows ==================== */
+.infoRows {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.infoRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.infoLabel {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: #5C5C5C;
+}
+
+.infoLabel svg {
+  color: #A57865;
+  flex-shrink: 0;
+}
+
+.infoValue {
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: #2C2C2C;
+}
+
+/* ==================== Payment Summary ==================== */
+.priceRows {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.priceRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.priceLabel {
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: #5C5C5C;
+}
+
+.priceValue {
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: #5C5C5C;
+}
+
+.divider {
+  height: 1px;
+  background-color: #E8E4E0;
+  margin: 16px 0;
+}
+
+.totalRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.totalLabel {
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: #2C2C2C;
+}
+
+.totalValue {
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: #2C2C2C;
+}
+
+.paymentInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.paymentRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.paymentLabel {
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: #5C5C5C;
+}
+
+.paymentValue {
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: #5C5C5C;
+}
+
+.transactionId {
+  font-family: 'Courier New', monospace;
+  font-size: 14px;
+  font-weight: 400;
+  color: #5C5C5C;
+}
+
+/* ==================== Right Column - Quick Actions ==================== */
+.rightColumn {
+  display: flex;
+  flex-direction: column;
+}
+
+.quickActionsCard {
+  background-color: #FFFFFF;
+  border: 1px solid #E8E4E0;
+  border-radius: 12px;
+  padding: 32px;
+  position: sticky;
+  top: 96px;
+}
+
+.quickActionsHeader {
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  color: #2C2C2C;
+  margin: 0 0 20px 0;
+}
+
+/* Email Notice */
+.emailNotice {
+  background-color: #F9F7F5;
+  border-radius: 8px;
+  padding: 16px;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.emailNotice svg {
+  color: #27AE60;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.emailText {
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: #5C5C5C;
+  line-height: 20px;
+}
+
+/* Download Receipt Button */
+.downloadButton {
+  width: 100%;
+  height: 44px;
+  background-color: transparent;
+  border: 1px solid #A57865;
+  color: #A57865;
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-bottom: 16px;
+}
+
+.downloadButton:hover {
+  background-color: #F9F7F5;
+}
+
+.downloadButton svg {
+  flex-shrink: 0;
+}
+
+/* View Booking Button */
+.viewBookingButton {
+  width: 100%;
+  height: 44px;
+  background-color: #A57865;
+  color: #FFFFFF;
+  border: none;
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-bottom: 24px;
+}
+
+.viewBookingButton:hover {
+  background-color: #8B6450;
+}
+
+.viewBookingButton svg {
+  flex-shrink: 0;
+}
+
+/* Section Divider */
+.sectionDivider {
+  height: 1px;
+  background-color: #E8E4E0;
+  margin: 24px 0;
+}
+
+/* Pre Check-in Section */
+.preCheckInHeader {
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: #2C2C2C;
+  margin: 0 0 12px 0;
+}
+
+.preCheckInDescription {
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: #5C5C5C;
+  line-height: 22px;
+  margin: 0 0 16px 0;
+}
+
+.preCheckInButton {
+  width: 100%;
+  height: 44px;
+  background-color: #E8E4E0;
+  color: #808080;
+  border: none;
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: not-allowed;
+  opacity: 0.6;
+  margin-bottom: 8px;
+}
+
+.preCheckInButton:not(:disabled) {
+  background-color: #A57865;
+  color: #FFFFFF;
+  cursor: pointer;
+  opacity: 1;
+}
+
+.preCheckInButton:not(:disabled):hover {
+  background-color: #8B6450;
+}
+
+.helperText {
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  color: #808080;
+  text-align: center;
+  margin: 0 0 24px 0;
+}
+
+/* Help Section */
+.helpHeader {
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: #2C2C2C;
+  margin: 0 0 16px 0;
+}
+
+.contactItems {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.contactItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: #5C5C5C;
+  text-decoration: none;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.contactItem svg {
+  color: #A57865;
+  flex-shrink: 0;
+}
+
+.contactItem:hover {
+  color: #A57865;
+}
+
+/* ==================== Important Information Section ==================== */
+.importantInfoSection {
+  background-color: #FFFFFF;
+  padding: 48px;
+  border: 1px solid #E8E4E0;
+  border-radius: 12px;
+  max-width: 1344px;
+  margin: 0 auto 48px;
+}
+
+.importantInfoHeader {
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+  color: #2C2C2C;
+  margin: 0 0 32px 0;
+}
+
+.infoCardsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+/* ==================== Action Buttons Section ==================== */
+.actionButtonsSection {
+  background-color: #F9F7F5;
+  padding: 48px;
+  max-width: 1344px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+
+.backToHomeButton {
+  width: 200px;
+  height: 48px;
+  background-color: transparent;
+  border: 1px solid #E8E4E0;
+  color: #5C5C5C;
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.backToHomeButton:hover {
+  border-color: #A57865;
+  color: #A57865;
+}
+
+.backToHomeButton svg {
+  flex-shrink: 0;
+}
+
+.bookAnotherButton {
+  width: 200px;
+  height: 48px;
+  background-color: #A57865;
+  color: #FFFFFF;
+  border: none;
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.bookAnotherButton:hover {
+  background-color: #8B6450;
+  transform: translateY(-2px);
+}
+
+.bookAnotherButton svg {
+  flex-shrink: 0;
+}
