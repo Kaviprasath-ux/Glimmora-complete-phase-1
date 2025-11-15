@@ -1,0 +1,82 @@
+/* ==================== FAQ Section ==================== */
+.faqSection {
+  background-color: #FFFFFF;
+  padding: 64px 48px;
+}
+
+.container {
+  max-width: 1344px;
+  margin: 0 auto;
+}
+
+/* ==================== Section Header ==================== */
+.sectionHeader {
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  color: #2C2C2C;
+  text-align: center;
+  margin: 0 0 48px 0;
+}
+
+/* ==================== Accordion Container ==================== */
+.accordionContainer {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* ==================== Accordion Item ==================== */
+.accordionItem {
+  background-color: #F9F7F5;
+  border-radius: 8px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.accordionItem:hover {
+  background-color: #F5F1ED;
+}
+
+/* ==================== Question Header ==================== */
+.questionHeader {
+  padding: 20px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+
+.questionText {
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: #2C2C2C;
+  margin: 0;
+  flex: 1;
+}
+
+/* ==================== Chevron Icon ==================== */
+.chevronIcon {
+  color: #A57865;
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+
+.chevronRotated {
+  transform: rotate(180deg);
+}
+
+/* ==================== Answer Content ==================== */
+.answerContent {
+  padding: 0 24px 20px;
+}
+
+.answerText {
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  color: #5C5C5C;
+  line-height: 24px;
+  margin: 0;
+}

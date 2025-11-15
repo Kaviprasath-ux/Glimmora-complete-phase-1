@@ -9,18 +9,22 @@
 // import GuestDetails from './components/Booking/GuestDetails';
 // import Payment from './components/Booking/Payment/Payment';
 // import Confirmation from './components/Booking/Confirmation/Confirmation';
-import Services from './pages/Services';
+// import Services from './pages/Services';
+import Contact from './pages/Contact';
 import './App.css';
 
 function App() {
-  // Showing Services page - Showcasing all hotel amenities and services
+  // Showing Contact page - Get in touch with contact form and FAQ
   // Toggle isAuthenticated to test both states
 
   // LOGGED-IN STATE (Shows new avatar dropdown design):
-  return <Services isAuthenticated={true} user={{ firstName: 'John', lastName: 'Doe', email: 'john.doe@glimmora.com' }} />;
+  return <Contact isAuthenticated={true} user={{ firstName: 'John', lastName: 'Doe', email: 'john.doe@glimmora.com' }} />;
 
   // UNLOGGED STATE (Uncomment to test):
-  // return <Services isAuthenticated={false} />;
+  // return <Contact isAuthenticated={false} />;
+
+  // SERVICES PAGE (Uncomment to view):
+  // return <Services isAuthenticated={true} user={{ firstName: 'John', lastName: 'Doe', email: 'john.doe@glimmora.com' }} />;
 
   // CONFIRMATION PAGE (Uncomment to view):
   // return <Confirmation isAuthenticated={true} user={{ firstName: 'John', lastName: 'Doe', email: 'john.doe@glimmora.com' }} />;

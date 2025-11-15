@@ -1,0 +1,59 @@
+/* ==================== Contact Card ==================== */
+.contactCard {
+  background-color: #FFFFFF;
+  border: 1px solid #E8E4E0;
+  border-radius: 12px;
+  padding: 32px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* ==================== Icon Container ==================== */
+.iconContainer {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background-color: #F9F7F5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+  color: #A57865;
+}
+
+/* ==================== Title ==================== */
+.title {
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  color: #2C2C2C;
+  margin: 0 0 12px 0;
+}
+
+/* ==================== Main Info ==================== */
+.mainInfo {
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: #A57865;
+  margin-bottom: 8px;
+  white-space: pre-line;
+}
+
+.mainInfo.clickable {
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.mainInfo.clickable:hover {
+  text-decoration: underline;
+}
+
+/* ==================== Secondary Info ==================== */
+.secondaryInfo {
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: #808080;
+  margin: 0;
+}
