@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import {
   Waves,
   Utensils,
@@ -108,6 +109,8 @@ const Home: React.FC<HomeProps> = ({ isAuthenticated = false, user }) => {
     },
   ];
 
+  const navigate = useNavigate();
+
   const handleSignOut = () => {
     console.log('User signed out');
     // TODO: Implement actual sign out logic
@@ -115,11 +118,11 @@ const Home: React.FC<HomeProps> = ({ isAuthenticated = false, user }) => {
   };
 
   const handleViewAllRooms = () => {
-    window.location.href = '/rooms';
+    navigate('/rooms');
   };
 
   const handleBookNow = () => {
-    window.location.href = '/rooms';
+    navigate('/rooms');
   };
 
   return (
@@ -144,29 +147,29 @@ const Home: React.FC<HomeProps> = ({ isAuthenticated = false, user }) => {
           <div className={styles.quickActionsContainer}>
             <h2 className={styles.quickActionsTitle}>Quick Actions</h2>
             <div className={styles.quickActionsGrid}>
-              <a href="/rooms" className={styles.actionCard}>
+              <Link to="/rooms" className={styles.actionCard}>
                 <Building2 size={32} strokeWidth={1.5} />
                 <h3>Book a Room</h3>
                 <p>Find and book your perfect stay</p>
-              </a>
+              </Link>
 
-              <a href="/pre-check-in" className={styles.actionCard}>
+              <Link to="/pre-check-in" className={styles.actionCard}>
                 <ClipboardCheck size={32} strokeWidth={1.5} />
                 <h3>Pre Check-in</h3>
                 <p>Complete online check-in</p>
-              </a>
+              </Link>
 
-              <a href="/services" className={styles.actionCard}>
+              <Link to="/services" className={styles.actionCard}>
                 <Sparkles size={32} strokeWidth={1.5} />
                 <h3>Services</h3>
                 <p>Explore hotel amenities</p>
-              </a>
+              </Link>
 
-              <a href="/contact" className={styles.actionCard}>
+              <Link to="/contact" className={styles.actionCard}>
                 <MessageCircle size={32} strokeWidth={1.5} />
                 <h3>Contact Us</h3>
                 <p>Get help and support</p>
-              </a>
+              </Link>
             </div>
           </div>
         </section>

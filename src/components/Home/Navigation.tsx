@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Bell } from 'lucide-react';
 import AvatarDropdown from './AvatarDropdown';
 import styles from './Home.module.css';
@@ -19,19 +20,33 @@ const Navigation: React.FC<NavigationProps> = ({
   userEmail = 'user@glimmora.com',
   userInitials = 'G',
   notificationCount = 0,
-  activeTab = 'home',
+  activeTab,
   onSignOut,
 }) => {
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  // Determine active tab from URL if not provided via props
+  const currentActiveTab = activeTab || (() => {
+    const path = location.pathname;
+    if (path === '/') return 'home';
+    if (path.startsWith('/rooms')) return 'rooms';
+    if (path.startsWith('/services')) return 'services';
+    if (path.startsWith('/contact')) return 'contact';
+    if (path.startsWith('/pre-check-in')) return 'pre-checkin';
+    return 'home';
+  })();
+
   const handleSignOut = () => {
     if (onSignOut) {
       onSignOut();
     }
-    // Redirect to home
-    window.location.href = '/';
+    // Navigate to home
+    navigate('/');
   };
 
   const handleBookNow = () => {
-    window.location.href = '/rooms';
+    navigate('/rooms');
   };
 
   return (
@@ -39,52 +54,52 @@ const Navigation: React.FC<NavigationProps> = ({
       <div className={styles.navContent}>
         {/* Left Side - Logo */}
         <div className={styles.navLeft}>
-          <a href="/" className={styles.logo}>
+          <Link to="/" className={styles.logo}>
             GLIMMORA
-          </a>
+          </Link>
 
           {/* Middle - Nav Items (Same for both logged and unlogged) */}
           <div className={styles.navItems}>
-            <a
-              href="/"
+            <Link
+              to="/"
               className={`${styles.navItem} ${
-                activeTab === 'home' ? styles.navItemActive : ''
+                currentActiveTab === 'home' ? styles.navItemActive : ''
               }`}
             >
               Home
-            </a>
-            <a
-              href="/rooms"
+            </Link>
+            <Link
+              to="/rooms"
               className={`${styles.navItem} ${
-                activeTab === 'rooms' ? styles.navItemActive : ''
+                currentActiveTab === 'rooms' ? styles.navItemActive : ''
               }`}
             >
               Rooms
-            </a>
-            <a
-              href="/services"
+            </Link>
+            <Link
+              to="/services"
               className={`${styles.navItem} ${
-                activeTab === 'services' ? styles.navItemActive : ''
+                currentActiveTab === 'services' ? styles.navItemActive : ''
               }`}
             >
               Services
-            </a>
-            <a
-              href="/contact"
+            </Link>
+            <Link
+              to="/contact"
               className={`${styles.navItem} ${
-                activeTab === 'contact' ? styles.navItemActive : ''
+                currentActiveTab === 'contact' ? styles.navItemActive : ''
               }`}
             >
               Contact
-            </a>
-            <a
-              href="/pre-check-in"
+            </Link>
+            <Link
+              to="/pre-check-in"
               className={`${styles.navItem} ${
-                activeTab === 'pre-checkin' ? styles.navItemActive : ''
+                currentActiveTab === 'pre-checkin' ? styles.navItemActive : ''
               }`}
             >
               Pre Check-in
-            </a>
+            </Link>
           </div>
         </div>
 
@@ -92,9 +107,9 @@ const Navigation: React.FC<NavigationProps> = ({
         <div className={styles.navRight}>
           {!isAuthenticated ? (
             <>
-              <a href="/login" className={styles.signInLink}>
+              <Link to="/login" className={styles.signInLink}>
                 Sign In
-              </a>
+              </Link>
               <button className={styles.bookNowButton} onClick={handleBookNow}>
                 Book Now
               </button>

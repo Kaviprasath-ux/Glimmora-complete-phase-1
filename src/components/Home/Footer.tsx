@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { MapPin, Mail, Phone, Facebook, Twitter, Instagram, Linkedin } from 'lucide-react';
 import styles from './Home.module.css';
 
@@ -20,12 +21,12 @@ const Footer: React.FC = () => {
           <div className={styles.footerColumn}>
             <h4 className={styles.footerColumnTitle}>Quick Links</h4>
             <div className={styles.footerLinks}>
-              <a href="/" className={styles.footerLink}>Home</a>
-              <a href="/rooms" className={styles.footerLink}>Rooms</a>
-              <a href="/services" className={styles.footerLink}>Services</a>
-              <a href="/pre-check-in" className={styles.footerLink}>Pre Check-in</a>
-              <a href="/about" className={styles.footerLink}>About</a>
-              <a href="/contact" className={styles.footerLink}>Contact</a>
+              <Link to="/" className={styles.footerLink}>Home</Link>
+              <Link to="/rooms" className={styles.footerLink}>Rooms</Link>
+              <Link to="/services" className={styles.footerLink}>Services</Link>
+              <Link to="/pre-check-in" className={styles.footerLink}>Pre Check-in</Link>
+              <Link to="/about" className={styles.footerLink}>About</Link>
+              <Link to="/contact" className={styles.footerLink}>Contact</Link>
             </div>
           </div>
 

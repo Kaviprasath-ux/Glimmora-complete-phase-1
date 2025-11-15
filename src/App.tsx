@@ -1,58 +1,58 @@
+// Pages and Components
+import Home from './components/Home/Home';
 // import Login from './components/Login';
 // import ForgotPassword from './components/ForgotPassword';
 // import ResetPassword from './components/ResetPassword';
 // import SignUp from './components/SignUp';
-// import Dashboard from './components/Dashboard';
-// import Home from './components/Home';
 // import Rooms from './components/Rooms';
 // import RoomDetails from './components/RoomDetails';
 // import GuestDetails from './components/Booking/GuestDetails';
 // import Payment from './components/Booking/Payment/Payment';
 // import Confirmation from './components/Booking/Confirmation/Confirmation';
-// import Services from './pages/Services';
-// import Contact from './pages/Contact';
-import PreCheckIn from './pages/PreCheckIn';
-import { AppProvider } from './context/AppContext';
+import Services from './pages/Services/Services';
+import Contact from './pages/Contact/Contact';
+import PreCheckIn from './pages/PreCheckIn/PreCheckIn';
+import { AppProvider, useApp } from './context/AppContext';
 import DemoModeIndicator from './components/DemoHelpers/DemoModeIndicator';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
 
-function App() {
-  // Showing Pre Check-in page - Smart adaptive page with 4 different views
-  // Toggle isAuthenticated to test both states
+function AppContent() {
+  const { currentUser, isAuthenticated } = useApp();
+
+  // Use context user if available, otherwise use demo user for testing
+  const user = currentUser || {
+    firstName: 'John',
+    lastName: 'Doe',
+    email: 'john.doe@glimmora.com'
+  };
 
   return (
-    <AppProvider>
+    <>
       <DemoModeIndicator />
+      <Routes>
+        <Route path="/" element={<Home isAuthenticated={isAuthenticated} user={user} />} />
+        <Route path="/services" element={<Services isAuthenticated={isAuthenticated} user={user} />} />
+        <Route path="/contact" element={<Contact isAuthenticated={isAuthenticated} user={user} />} />
+        <Route path="/pre-check-in" element={<PreCheckIn isAuthenticated={isAuthenticated} user={user} />} />
 
-      {/* LOGGED-IN STATE (Shows booking list view): */}
-      <PreCheckIn isAuthenticated={true} user={{ firstName: 'John', lastName: 'Doe', email: 'john.doe@glimmora.com' }} />
+        {/* TODO: Uncomment these routes as pages are created */}
+        {/* <Route path="/rooms" element={<Rooms isAuthenticated={isAuthenticated} user={user} />} /> */}
+        {/* <Route path="/rooms/:id" element={<RoomDetails isAuthenticated={isAuthenticated} user={user} />} /> */}
+        {/* <Route path="/booking/guest-details" element={<GuestDetails isAuthenticated={isAuthenticated} user={user} />} /> */}
+        {/* <Route path="/booking/payment" element={<Payment isAuthenticated={isAuthenticated} user={user} />} /> */}
+        {/* <Route path="/booking/confirmation" element={<Confirmation isAuthenticated={isAuthenticated} user={user} />} /> */}
+      </Routes>
+    </>
+  );
+}
 
-      {/* UNLOGGED STATE (Shows lookup form view - Uncomment to test): */}
-      {/* <PreCheckIn isAuthenticated={false} /> */}
-
-      {/* CONTACT PAGE (Uncomment to view): */}
-      {/* <Contact isAuthenticated={true} user={{ firstName: 'John', lastName: 'Doe', email: 'john.doe@glimmora.com' }} /> */}
-
-      {/* SERVICES PAGE (Uncomment to view): */}
-      {/* <Services isAuthenticated={true} user={{ firstName: 'John', lastName: 'Doe', email: 'john.doe@glimmora.com' }} /> */}
-
-      {/* CONFIRMATION PAGE (Uncomment to view): */}
-      {/* <Confirmation isAuthenticated={true} user={{ firstName: 'John', lastName: 'Doe', email: 'john.doe@glimmora.com' }} /> */}
-
-      {/* PAYMENT PAGE (Uncomment to view): */}
-      {/* <Payment isAuthenticated={true} user={{ firstName: 'John', lastName: 'Doe', email: 'john.doe@glimmora.com' }} /> */}
-
-      {/* GUEST DETAILS PAGE (Uncomment to view): */}
-      {/* <GuestDetails isAuthenticated={true} user={{ firstName: 'John', lastName: 'Doe', email: 'john.doe@glimmora.com' }} /> */}
-
-      {/* ROOM DETAILS PAGE (Uncomment to view): */}
-      {/* <RoomDetails isAuthenticated={true} user={{ firstName: 'John', lastName: 'Doe', email: 'john.doe@glimmora.com' }} /> */}
-
-      {/* ROOMS PAGE (Uncomment to view): */}
-      {/* <Rooms isAuthenticated={true} user={{ firstName: 'John', lastName: 'Doe', email: 'john.doe@glimmora.com' }} /> */}
-
-      {/* HOME PAGE (Uncomment to view): */}
-      {/* <Home isAuthenticated={true} user={{ firstName: 'John', lastName: 'Doe', email: 'john.doe@glimmora.com' }} /> */}
+function App() {
+  return (
+    <AppProvider>
+      <Router>
+        <AppContent />
+      </Router>
     </AppProvider>
   );
 }
