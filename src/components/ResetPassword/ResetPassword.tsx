@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import type { FormEvent, ChangeEvent } from 'react';
 import { KeyRound, Eye, EyeOff, Check, Circle } from 'lucide-react';
+import ResetPasswordSuccess from './ResetPasswordSuccess';
 import styles from './ResetPassword.module.css';
 
 interface PasswordRequirements {
@@ -23,6 +24,7 @@ const ResetPassword: React.FC = () => {
   const [showNewPassword, setShowNewPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const [isResetSuccessful, setIsResetSuccessful] = useState(false);
   const [touched, setTouched] = useState({
     newPassword: false,
     confirmPassword: false,
@@ -134,7 +136,7 @@ const ResetPassword: React.FC = () => {
     try {
       await new Promise(resolve => setTimeout(resolve, 2000));
       console.log('Password reset successfully');
-      // Show success screen (will be implemented next)
+      setIsResetSuccessful(true);
     } catch (error) {
       console.error('Failed to reset password:', error);
     } finally {
@@ -155,6 +157,12 @@ const ResetPassword: React.FC = () => {
     </div>
   );
 
+  // Show success screen if password was reset successfully
+  if (isResetSuccessful) {
+    return <ResetPasswordSuccess />;
+  }
+
+  // Show reset password form
   return (
     <div className={styles.container}>
       <header className={styles.header}>
