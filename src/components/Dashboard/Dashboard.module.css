@@ -1,0 +1,572 @@
+/* ==================== CSS Variables ==================== */
+:root {
+  /* Colors */
+  --primary: #A57865;
+  --primary-dark: #8B6450;
+  --text-primary: #2C2C2C;
+  --text-secondary: #5C5C5C;
+  --text-muted: #808080;
+  --neutral-100: #F9F7F5;
+  --neutral-200: #E8E4E0;
+  --neutral-300: #FAF8F6;
+  --error: #DC3545;
+  --success: #27AE60;
+  --warning: #FFA500;
+  --white: #FFFFFF;
+
+  /* Typography */
+  --font-heading: 'Montserrat', Arial, sans-serif;
+  --font-body: 'Open Sans', Arial, sans-serif;
+}
+
+/* ==================== Dashboard Container ==================== */
+.dashboardContainer {
+  min-height: 100vh;
+  background-color: var(--neutral-100);
+  position: relative;
+}
+
+/* ==================== Top Navigation Bar ==================== */
+.topNav {
+  height: 72px;
+  background-color: var(--white);
+  border-bottom: 1px solid var(--neutral-200);
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.04);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.navContent {
+  max-width: 1344px;
+  height: 100%;
+  margin: 0 auto;
+  padding: 0 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navLeft {
+  display: flex;
+  align-items: center;
+  gap: 48px;
+}
+
+.logo {
+  font-family: var(--font-heading);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--primary);
+  letter-spacing: 0.5px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+}
+
+.navItems {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.navItem {
+  text-decoration: none;
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  padding-bottom: 4px;
+  border-bottom: 2px solid transparent;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.navItem:hover {
+  color: var(--primary);
+}
+
+.navItemActive {
+  color: var(--primary);
+  border-bottom-color: var(--primary);
+}
+
+.navRight {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.notificationIcon {
+  position: relative;
+  cursor: pointer;
+  color: var(--text-secondary);
+  transition: color 0.2s ease;
+}
+
+.notificationIcon:hover {
+  color: var(--primary);
+}
+
+.notificationBadge {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  width: 12px;
+  height: 12px;
+  background-color: var(--error);
+  color: var(--white);
+  border-radius: 50%;
+  font-family: var(--font-body);
+  font-size: 8px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.userGreeting {
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.userAvatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: var(--neutral-200);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.signOutLink {
+  text-decoration: none;
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--primary);
+  transition: color 0.2s ease;
+  cursor: pointer;
+}
+
+.signOutLink:hover {
+  color: var(--primary-dark);
+  text-decoration: underline;
+}
+
+/* ==================== Main Content ==================== */
+.mainContent {
+  margin-top: 72px;
+  max-width: 1344px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 32px 48px;
+}
+
+/* ==================== Welcome Section ==================== */
+.welcomeSection {
+  margin-bottom: 32px;
+}
+
+.pageTitle {
+  font-family: var(--font-heading);
+  font-size: 32px;
+  font-weight: 600;
+  color: var(--text-primary);
+  line-height: 40px;
+  margin: 0 0 8px 0;
+}
+
+.pageSubtitle {
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--text-secondary);
+  line-height: 24px;
+  margin: 0;
+}
+
+/* ==================== Quick Actions Grid ==================== */
+.quickActionsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  margin-bottom: 40px;
+}
+
+.quickActionCard {
+  width: 100%;
+  height: 120px;
+  background-color: var(--white);
+  border: 1px solid var(--neutral-200);
+  border-radius: 12px;
+  padding: 24px;
+  cursor: pointer;
+  transition: all 200ms ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.quickActionCard:hover {
+  border-color: var(--primary);
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.08);
+  transform: translateY(-2px);
+}
+
+.iconContainer {
+  width: 32px;
+  height: 32px;
+  background-color: var(--neutral-300);
+  border-radius: 8px;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary);
+  margin-bottom: 12px;
+}
+
+.cardTitle {
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+/* ==================== Upcoming Stays Section ==================== */
+.upcomingStays {
+  margin-bottom: 40px;
+}
+
+.sectionHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.sectionTitle {
+  font-family: var(--font-heading);
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.viewAllLink {
+  background: none;
+  border: none;
+  padding: 0;
+  text-decoration: none;
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--primary);
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.viewAllLink:hover {
+  text-decoration: underline;
+  color: var(--primary-dark);
+}
+
+.bookingsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* ==================== Booking Card ==================== */
+.bookingCard {
+  width: 100%;
+  background-color: var(--white);
+  border: 1px solid var(--neutral-200);
+  border-radius: 12px;
+  padding: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.bookingLeft {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.bookingRef {
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+.statusBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-bottom: 8px;
+}
+
+.statusDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.statusText {
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.roomName {
+  font-family: var(--font-heading);
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.detailsRow {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-top: 8px;
+}
+
+.detailItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--text-secondary);
+}
+
+.detailItem svg {
+  color: var(--text-muted);
+}
+
+.bookingRight {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 16px;
+}
+
+.countdownBadge {
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--primary);
+  background-color: var(--neutral-300);
+  padding: 8px 16px;
+  border-radius: 20px;
+}
+
+.actionButtons {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.primaryButton {
+  height: 36px;
+  padding: 0 16px;
+  background-color: var(--primary);
+  color: var(--white);
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 500;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.primaryButton:hover {
+  background-color: var(--primary-dark);
+}
+
+.secondaryButton {
+  height: 36px;
+  padding: 0 16px;
+  background-color: var(--white);
+  color: var(--primary);
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 500;
+  border: 1px solid var(--primary);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.secondaryButton:hover {
+  background-color: var(--neutral-300);
+}
+
+/* ==================== Two Column Section ==================== */
+.twoColumnSection {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 32px;
+  margin-top: 40px;
+}
+
+/* ==================== Recent Activity Card ==================== */
+.recentActivityCard {
+  background-color: var(--white);
+  border: 1px solid var(--neutral-200);
+  border-radius: 12px;
+  padding: 24px;
+}
+
+.subsectionTitle {
+  font-family: var(--font-heading);
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0 0 20px 0;
+}
+
+.activityList {
+  display: flex;
+  flex-direction: column;
+}
+
+.activityItem {
+  padding: 12px 0;
+  border-bottom: 1px solid #F5F1EE;
+}
+
+.activityItem:last-child {
+  border-bottom: none;
+}
+
+.activityText {
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--text-secondary);
+  margin: 0 0 4px 0;
+}
+
+.activityTimestamp {
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+.showMoreLink {
+  display: inline-block;
+  margin-top: 16px;
+  background: none;
+  border: none;
+  padding: 0;
+  text-decoration: none;
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--primary);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.showMoreLink:hover {
+  text-decoration: underline;
+}
+
+/* ==================== Quick Stats Card ==================== */
+.quickStatsCard {
+  background-color: var(--white);
+  border: 1px solid var(--neutral-200);
+  border-radius: 12px;
+  padding: 24px;
+}
+
+.statsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.statCard {
+  background-color: var(--neutral-100);
+  border-radius: 8px;
+  padding: 16px;
+  height: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.statLabel {
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--text-muted);
+  margin: 0 0 8px 0;
+}
+
+.statValue {
+  font-family: var(--font-heading);
+  font-size: 32px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+/* ==================== AI Chat Bubble ==================== */
+.aiChatBubble {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  width: 64px;
+  height: 64px;
+  background-color: var(--primary);
+  border: none;
+  border-radius: 50%;
+  box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.16);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 200ms ease;
+  color: var(--white);
+  z-index: 999;
+}
+
+.aiChatBubble:hover {
+  transform: scale(1.1);
+  box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.chatNotificationDot {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  width: 12px;
+  height: 12px;
+  background-color: var(--error);
+  border: 2px solid var(--white);
+  border-radius: 50%;
+}

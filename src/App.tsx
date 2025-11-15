@@ -1,10 +1,11 @@
 // Pages and Components
 import Home from './components/Home/Home';
-// import Login from './components/Login';
-// import ForgotPassword from './components/ForgotPassword';
-// import ResetPassword from './components/ResetPassword';
-// import SignUp from './components/SignUp';
-// import Rooms from './components/Rooms';
+import Login from './components/Login/Login';
+import ForgotPassword from './components/ForgotPassword/ForgotPassword';
+import ResetPassword from './components/ResetPassword/ResetPassword';
+import SignUp from './components/SignUp/SignUp';
+import Dashboard from './components/Dashboard/Dashboard';
+import Rooms from './components/Rooms/Rooms';
 // import RoomDetails from './components/RoomDetails';
 // import GuestDetails from './components/Booking/GuestDetails';
 // import Payment from './components/Booking/Payment/Payment';
@@ -32,12 +33,21 @@ function AppContent() {
       <DemoModeIndicator />
       <Routes>
         <Route path="/" element={<Home isAuthenticated={isAuthenticated} user={user} />} />
+
+        {/* Authentication Routes */}
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<SignUp />} />
+        <Route path="/forgot-password" element={<ForgotPassword />} />
+        <Route path="/reset-password" element={<ResetPassword />} />
+
+        {/* Main App Routes */}
+        <Route path="/dashboard" element={<Dashboard isAuthenticated={isAuthenticated} user={user} />} />
+        <Route path="/rooms" element={<Rooms isAuthenticated={isAuthenticated} user={user} />} />
         <Route path="/services" element={<Services isAuthenticated={isAuthenticated} user={user} />} />
         <Route path="/contact" element={<Contact isAuthenticated={isAuthenticated} user={user} />} />
         <Route path="/pre-check-in" element={<PreCheckIn isAuthenticated={isAuthenticated} user={user} />} />
 
         {/* TODO: Uncomment these routes as pages are created */}
-        {/* <Route path="/rooms" element={<Rooms isAuthenticated={isAuthenticated} user={user} />} /> */}
         {/* <Route path="/rooms/:id" element={<RoomDetails isAuthenticated={isAuthenticated} user={user} />} /> */}
         {/* <Route path="/booking/guest-details" element={<GuestDetails isAuthenticated={isAuthenticated} user={user} />} /> */}
         {/* <Route path="/booking/payment" element={<Payment isAuthenticated={isAuthenticated} user={user} />} /> */}

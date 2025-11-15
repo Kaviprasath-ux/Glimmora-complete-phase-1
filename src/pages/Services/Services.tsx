@@ -1,4 +1,5 @@
 import React, { useState, useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
 import {
   ChevronRight,
   UtensilsCrossed,
@@ -23,6 +24,7 @@ import {
   Check,
   Calendar,
 } from 'lucide-react';
+import { useApp } from '../../context/AppContext';
 import Navigation from '../../components/Home/Navigation';
 import Footer from '../../components/Home/Footer';
 import ServiceCard from '../../components/Services/ServiceCard';
@@ -49,8 +51,15 @@ interface Service {
 }
 
 const Services: React.FC<ServicesProps> = ({ isAuthenticated, user }) => {
+  const { logout } = useApp();
+  const navigate = useNavigate();
   const [activeCategory, setActiveCategory] = useState('All Services');
   const servicesGridRef = useRef<HTMLDivElement>(null);
+
+  const handleSignOut = () => {
+    logout();
+    navigate('/');
+  };
 
   // Categories
   const categories = [
@@ -215,6 +224,7 @@ const Services: React.FC<ServicesProps> = ({ isAuthenticated, user }) => {
         userEmail={user?.email}
         userInitials={user ? `${user.firstName[0]}${user.lastName[0]}` : undefined}
         activeTab="services"
+        onSignOut={handleSignOut}
       />
 
       {/* Breadcrumb */}

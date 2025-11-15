@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import type { FormEvent, ChangeEvent } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import { Eye, EyeOff, Chrome, Facebook } from 'lucide-react';
+import { useApp } from '../../context/AppContext';
+import logoImage from '../../assets/logo 1.png';
 import styles from './SignUp.module.css';
 
 interface PasswordRequirements {
@@ -18,6 +21,8 @@ interface PasswordStrength {
 }
 
 const SignUp: React.FC = () => {
+  const { signup } = useApp();
+  const navigate = useNavigate();
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [email, setEmail] = useState('');
@@ -29,6 +34,7 @@ const SignUp: React.FC = () => {
   const [termsAccepted, setTermsAccepted] = useState(false);
   const [marketingAccepted, setMarketingAccepted] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const [signupError, setSignupError] = useState<string | undefined>(undefined);
   const [touched, setTouched] = useState({
     firstName: false,
     lastName: false,
@@ -188,20 +194,27 @@ const SignUp: React.FC = () => {
     }
 
     setIsLoading(true);
+    setSignupError(undefined);
 
-    // Simulate API call
     try {
-      await new Promise(resolve => setTimeout(resolve, 2000));
-      console.log('Account created successfully:', {
+      const result = signup({
         firstName,
         lastName,
         email,
         phone,
+        password,
         marketingAccepted,
       });
-      // TODO: Navigate to email verification screen
+
+      if (result.success) {
+        // Navigate to home page after successful signup
+        navigate('/');
+      } else {
+        setSignupError('An error occurred while creating your account. Please try again.');
+      }
     } catch (error) {
       console.error('Failed to create account:', error);
+      setSignupError('An error occurred while creating your account. Please try again.');
     } finally {
       setIsLoading(false);
     }
@@ -211,11 +224,13 @@ const SignUp: React.FC = () => {
     <div className={styles.container}>
       <header className={styles.header}>
         <div className={styles.headerContent}>
-          <div className={styles.logo}>GLIMMORA</div>
+          <Link to="/" className={styles.logoLink}>
+            <img src={logoImage} alt="Glimmora Hotel" className={styles.logo} />
+          </Link>
           <nav className={styles.nav}>
-            <a href="#home" className={styles.navLink}>Home</a>
-            <a href="#rooms" className={styles.navLink}>Rooms</a>
-            <a href="#contact" className={styles.navLink}>Contact</a>
+            <Link to="/" className={styles.navLink}>Home</Link>
+            <Link to="/rooms" className={styles.navLink}>Rooms</Link>
+            <Link to="/contact" className={styles.navLink}>Contact</Link>
           </nav>
         </div>
       </header>
@@ -226,6 +241,12 @@ const SignUp: React.FC = () => {
           <p className={styles.description}>
             Join Glimmora for exclusive member benefits
           </p>
+
+          {signupError && (
+            <div className={styles.errorAlert} role="alert">
+              {signupError}
+            </div>
+          )}
 
           <form onSubmit={handleSubmit} className={styles.form} noValidate>
             {/* First Name & Last Name (Side by Side) */}
@@ -245,6 +266,7 @@ const SignUp: React.FC = () => {
                     touched.firstName && !isValidName(firstName) ? styles.inputError : ''
                   }`}
                   placeholder="John"
+                  autoComplete="off"
                   disabled={isLoading}
                   aria-invalid={touched.firstName && !isValidName(firstName)}
                 />
@@ -272,6 +294,7 @@ const SignUp: React.FC = () => {
                     touched.lastName && !isValidName(lastName) ? styles.inputError : ''
                   }`}
                   placeholder="Doe"
+                  autoComplete="off"
                   disabled={isLoading}
                   aria-invalid={touched.lastName && !isValidName(lastName)}
                 />
@@ -301,6 +324,7 @@ const SignUp: React.FC = () => {
                   touched.email && !isValidEmail(email) ? styles.inputError : ''
                 }`}
                 placeholder="your.email@example.com"
+                autoComplete="off"
                 disabled={isLoading}
                 aria-invalid={touched.email && !isValidEmail(email)}
               />
@@ -347,6 +371,7 @@ const SignUp: React.FC = () => {
                     touched.password && !isPasswordValid() ? styles.inputError : ''
                   }`}
                   placeholder="Enter your password"
+                  autoComplete="new-password"
                   disabled={isLoading}
                   aria-invalid={touched.password && !isPasswordValid()}
                 />
@@ -407,6 +432,7 @@ const SignUp: React.FC = () => {
                       : ''
                   }`}
                   placeholder="Confirm your password"
+                  autoComplete="new-password"
                   disabled={isLoading}
                   aria-invalid={touched.confirmPassword && !isConfirmPasswordValid()}
                 />
@@ -442,9 +468,9 @@ const SignUp: React.FC = () => {
                   />
                   <span className={styles.checkboxText}>
                     I agree to the{' '}
-                    <a href="#terms" className={styles.link}>Terms of Service</a>
+                    <Link to="/terms" className={styles.link}>Terms of Service</Link>
                     {' '}and{' '}
-                    <a href="#privacy" className={styles.link}>Privacy Policy</a>
+                    <Link to="/privacy" className={styles.link}>Privacy Policy</Link>
                     <span className={styles.required}> *</span>
                   </span>
                 </label>
@@ -513,7 +539,7 @@ const SignUp: React.FC = () => {
           {/* Sign In Link */}
           <div className={styles.signInLink}>
             Already have an account?{' '}
-            <a href="#signin" className={styles.link}>Sign In</a>
+            <Link to="/login" className={styles.link}>Sign In</Link>
           </div>
         </div>
       </main>

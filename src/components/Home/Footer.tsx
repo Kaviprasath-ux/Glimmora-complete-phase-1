@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { MapPin, Mail, Phone, Facebook, Twitter, Instagram, Linkedin } from 'lucide-react';
+import logoImage from '../../assets/logo 1.png';
 import styles from './Home.module.css';
 
 const Footer: React.FC = () => {
@@ -11,7 +12,7 @@ const Footer: React.FC = () => {
         <div className={styles.footerGrid}>
           {/* Column 1 - Brand */}
           <div className={styles.footerColumn}>
-            <div className={styles.footerLogo}>GLIMMORA</div>
+            <img src={logoImage} alt="Glimmora Hotel" className={styles.footerLogo} />
             <p className={styles.footerBrandDescription}>
               Experience luxury and comfort at Glimmora Hotel. Your perfect stay awaits.
             </p>

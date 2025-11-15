@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import { CheckCircle } from 'lucide-react';
+import logoImage from '../../assets/logo 1.png';
 import styles from './ResetPasswordSuccess.module.css';
 
 interface ResetPasswordSuccessProps {
@@ -7,8 +9,22 @@ interface ResetPasswordSuccessProps {
 }
 
 const ResetPasswordSuccess: React.FC<ResetPasswordSuccessProps> = ({ onContinue }) => {
+  const navigate = useNavigate();
   const [countdown, setCountdown] = useState(3);
   const [isRedirecting, setIsRedirecting] = useState(false);
+
+  const handleContinue = () => {
+    if (isRedirecting) return;
+
+    setIsRedirecting(true);
+
+    if (onContinue) {
+      onContinue();
+    } else {
+      // Default: navigate to login page
+      navigate('/login');
+    }
+  };
 
   useEffect(() => {
     if (countdown > 0) {
@@ -22,28 +38,17 @@ const ResetPasswordSuccess: React.FC<ResetPasswordSuccessProps> = ({ onContinue 
     }
   }, [countdown]);
 
-  const handleContinue = () => {
-    if (isRedirecting) return;
-
-    setIsRedirecting(true);
-
-    if (onContinue) {
-      onContinue();
-    } else {
-      // Default: navigate to login page
-      window.location.href = '/login';
-    }
-  };
-
   return (
     <div className={styles.container}>
       <header className={styles.header}>
         <div className={styles.headerContent}>
-          <div className={styles.logo}>GLIMMORA</div>
+          <Link to="/" className={styles.logoLink}>
+            <img src={logoImage} alt="Glimmora Hotel" className={styles.logo} />
+          </Link>
           <nav className={styles.nav}>
-            <a href="#home" className={styles.navLink}>Home</a>
-            <a href="#rooms" className={styles.navLink}>Rooms</a>
-            <a href="#contact" className={styles.navLink}>Contact</a>
+            <Link to="/" className={styles.navLink}>Home</Link>
+            <Link to="/rooms" className={styles.navLink}>Rooms</Link>
+            <Link to="/contact" className={styles.navLink}>Contact</Link>
           </nav>
         </div>
       </header>
