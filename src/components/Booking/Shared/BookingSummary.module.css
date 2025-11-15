@@ -1,0 +1,167 @@
+/* ==================== Summary Card ==================== */
+.summaryCard {
+  background-color: #FFFFFF;
+  border: 1px solid #E8E4E0;
+  border-radius: 12px;
+  padding: 32px;
+  position: sticky;
+  top: 104px;
+  height: fit-content;
+}
+
+/* ==================== Summary Header ==================== */
+.summaryHeader {
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  color: #2C2C2C;
+  margin: 0 0 24px 0;
+}
+
+/* ==================== Room Image ==================== */
+.roomImage {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 16px;
+  background: linear-gradient(135deg, #A57865 0%, #8B6450 100%);
+}
+
+/* ==================== Room Name ==================== */
+.roomName {
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: #2C2C2C;
+  line-height: 24px;
+  margin: 0 0 12px 0;
+}
+
+/* ==================== Rating ==================== */
+.rating {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-bottom: 16px;
+}
+
+.ratingText {
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  color: #2C2C2C;
+}
+
+/* ==================== Booking Details ==================== */
+.bookingDetails {
+  margin-bottom: 24px;
+}
+
+.detailRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: #5C5C5C;
+}
+
+.detailRow svg {
+  color: #A57865;
+  flex-shrink: 0;
+}
+
+/* ==================== Price Section ==================== */
+.priceSection {
+  margin-bottom: 24px;
+}
+
+.priceSectionHeader {
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: #2C2C2C;
+  margin: 0 0 16px 0;
+}
+
+.priceBreakdown {
+  margin-bottom: 16px;
+}
+
+.priceRow {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: #5C5C5C;
+}
+
+.divider {
+  height: 1px;
+  background-color: #E8E4E0;
+  margin: 16px 0;
+}
+
+.totalRow {
+  display: flex;
+  justify-content: space-between;
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: #2C2C2C;
+}
+
+/* ==================== Free Cancellation ==================== */
+.freeCancellation {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  color: #27AE60;
+  margin-bottom: 24px;
+}
+
+.freeCancellation svg {
+  flex-shrink: 0;
+}
+
+/* ==================== Help Section ==================== */
+.helpSection {
+  padding-top: 24px;
+  border-top: 1px solid #E8E4E0;
+}
+
+.helpHeader {
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: #A57865;
+  margin: 0 0 8px 0;
+}
+
+.contactItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: #5C5C5C;
+  margin-bottom: 8px;
+}
+
+.contactItem:last-child {
+  margin-bottom: 0;
+}
+
+.contactItem svg {
+  color: #A57865;
+  flex-shrink: 0;
+}
