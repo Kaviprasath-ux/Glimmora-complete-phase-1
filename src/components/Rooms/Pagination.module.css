@@ -1,0 +1,61 @@
+/* ==================== Pagination ==================== */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-top: 48px;
+  margin-bottom: 32px;
+}
+
+/* ==================== Buttons ==================== */
+.navButton,
+.pageButton {
+  width: 40px;
+  height: 40px;
+  background-color: #FFFFFF;
+  border: 1px solid #E8E4E0;
+  color: #5C5C5C;
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 200ms ease;
+}
+
+.navButton:hover:not(.disabled),
+.pageButton:hover:not(.active) {
+  border-color: #A57865;
+  color: #A57865;
+}
+
+/* ==================== Active Page ==================== */
+.pageButton.active {
+  background-color: #A57865;
+  border: 1px solid #A57865;
+  color: #FFFFFF;
+}
+
+/* ==================== Disabled State ==================== */
+.navButton.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.navButton.disabled:hover {
+  border-color: #E8E4E0;
+  color: #5C5C5C;
+}
+
+/* ==================== Ellipsis ==================== */
+.ellipsis {
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: #5C5C5C;
+  padding: 0 4px;
+}

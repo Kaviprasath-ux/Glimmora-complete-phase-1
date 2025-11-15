@@ -1,0 +1,149 @@
+/* ==================== Filters Panel ==================== */
+.filtersPanel {
+  width: 280px;
+  background-color: #FFFFFF;
+  border: 1px solid #E8E4E0;
+  border-radius: 12px;
+  padding: 24px;
+  position: sticky;
+  top: 104px;
+  height: fit-content;
+  max-height: calc(100vh - 136px);
+  overflow-y: auto;
+}
+
+/* Custom scrollbar */
+.filtersPanel::-webkit-scrollbar {
+  width: 6px;
+}
+
+.filtersPanel::-webkit-scrollbar-track {
+  background: #F9F7F5;
+  border-radius: 3px;
+}
+
+.filtersPanel::-webkit-scrollbar-thumb {
+  background: #E8E4E0;
+  border-radius: 3px;
+}
+
+.filtersPanel::-webkit-scrollbar-thumb:hover {
+  background: #A57865;
+}
+
+/* ==================== Filter Section ==================== */
+.filterSection {
+  margin-bottom: 28px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid #F5F1EE;
+}
+
+.filterSection:last-of-type {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+/* ==================== Section Header ==================== */
+.sectionHeader {
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: #2C2C2C;
+  margin-bottom: 16px;
+}
+
+/* ==================== Checkbox List ==================== */
+.checkboxList {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+/* ==================== Checkbox Item ==================== */
+.checkboxItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: background-color 200ms ease;
+  position: relative;
+}
+
+.checkboxItem:hover {
+  background-color: #F9F7F5;
+}
+
+/* ==================== Checkbox (Hidden) ==================== */
+.checkbox {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* ==================== Custom Checkbox ==================== */
+.customCheckbox {
+  width: 18px;
+  height: 18px;
+  border: 2px solid #E8E4E0;
+  border-radius: 4px;
+  background-color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 200ms ease;
+  flex-shrink: 0;
+}
+
+.checkbox:checked + .customCheckbox {
+  background-color: #A57865;
+  border-color: #A57865;
+}
+
+.checkboxItem:hover .customCheckbox {
+  border-color: #A57865;
+}
+
+/* ==================== Checkbox Label ==================== */
+.checkboxLabel {
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: #2C2C2C;
+  flex: 1;
+}
+
+/* ==================== Count Badge ==================== */
+.countBadge {
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  color: #808080;
+  background-color: #F5F1EE;
+  padding: 2px 8px;
+  border-radius: 10px;
+}
+
+/* ==================== Clear All Button ==================== */
+.clearAllButton {
+  width: 100%;
+  height: 40px;
+  background-color: transparent;
+  border: 1px solid #DC3545;
+  color: #DC3545;
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 24px;
+  transition: all 200ms ease;
+}
+
+.clearAllButton:hover {
+  background-color: #FEF2F2;
+}

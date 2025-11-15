@@ -1,0 +1,224 @@
+/* ==================== Room Card ==================== */
+.roomCard {
+  width: 100%;
+  background-color: #FFFFFF;
+  border: 1px solid #E8E4E0;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 200ms ease;
+  position: relative;
+}
+
+.roomCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.12);
+  border-color: #A57865;
+}
+
+.roomCard:hover .viewDetailsButton {
+  background-color: #A57865;
+  color: #FFFFFF;
+  transform: translateY(-2px);
+}
+
+.roomCard:hover .image {
+  transform: scale(1.05);
+}
+
+/* ==================== Image Section ==================== */
+.imageSection {
+  width: 100%;
+  height: 280px;
+  position: relative;
+  overflow: hidden;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  transition: transform 300ms ease;
+}
+
+.imagePlaceholder {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #E8E4E0 0%, #F9F7F5 100%);
+}
+
+/* ==================== Favorite Button ==================== */
+.favoriteButton {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.9);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 200ms ease;
+  z-index: 2;
+}
+
+.favoriteButton:hover {
+  background-color: #FFFFFF;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* ==================== Badge ==================== */
+.badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background-color: #A57865;
+  color: #FFFFFF;
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  padding: 6px 12px;
+  border-radius: 4px;
+  z-index: 2;
+}
+
+/* ==================== Content Section ==================== */
+.contentSection {
+  padding: 20px;
+}
+
+.roomName {
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  color: #2C2C2C;
+  line-height: 28px;
+  margin: 0 0 8px 0;
+  transition: color 200ms ease;
+}
+
+.roomCard:hover .roomName {
+  color: #A57865;
+}
+
+/* ==================== Rating Row ==================== */
+.ratingRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.stars {
+  display: flex;
+  gap: 2px;
+}
+
+.ratingNumber {
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  color: #2C2C2C;
+}
+
+.reviewCount {
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  color: #808080;
+}
+
+/* ==================== Description ==================== */
+.description {
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: #5C5C5C;
+  line-height: 20px;
+  margin: 0 0 16px 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ==================== Features Row ==================== */
+.featuresRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.feature {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: #5C5C5C;
+}
+
+.feature svg {
+  color: #A57865;
+}
+
+/* ==================== Divider ==================== */
+.divider {
+  height: 1px;
+  background-color: #F5F1EE;
+  margin: 16px 0;
+}
+
+/* ==================== Bottom Row ==================== */
+.bottomRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.priceSection {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.price {
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: #A57865;
+  line-height: 28px;
+}
+
+.perNight {
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  color: #808080;
+}
+
+.viewDetailsButton {
+  width: 140px;
+  height: 44px;
+  background-color: transparent;
+  border: 1px solid #A57865;
+  color: #A57865;
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 200ms ease;
+}
+
+.viewDetailsButton:hover {
+  background-color: #A57865;
+  color: #FFFFFF;
+  transform: translateY(-2px);
+}
