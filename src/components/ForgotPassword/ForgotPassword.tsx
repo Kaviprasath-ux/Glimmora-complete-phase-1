@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import type { FormEvent, ChangeEvent } from 'react';
 import { Lock, Mail, ArrowLeft } from 'lucide-react';
+import EmailSentSuccess from './EmailSentSuccess';
 import styles from './ForgotPassword.module.css';
 
 const ForgotPassword: React.FC = () => {
@@ -8,6 +9,7 @@ const ForgotPassword: React.FC = () => {
   const [error, setError] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [touched, setTouched] = useState(false);
+  const [isEmailSent, setIsEmailSent] = useState(false);
 
   const validateEmail = (email: string): string => {
     if (!email) {
@@ -35,6 +37,12 @@ const ForgotPassword: React.FC = () => {
     setError(validateEmail(email));
   };
 
+  const sendResetEmail = async () => {
+    // Simulate API call to send reset email
+    await new Promise(resolve => setTimeout(resolve, 2000));
+    console.log('Password reset email sent to:', email);
+  };
+
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
@@ -50,11 +58,9 @@ const ForgotPassword: React.FC = () => {
 
     setIsLoading(true);
 
-    // Simulate API call
     try {
-      await new Promise(resolve => setTimeout(resolve, 2000));
-      console.log('Password reset email sent to:', email);
-      // Handle success state here (will be implemented next)
+      await sendResetEmail();
+      setIsEmailSent(true);
     } catch (err) {
       console.error('Failed to send reset email:', err);
       setError('Failed to send reset email. Please try again.');
@@ -63,6 +69,16 @@ const ForgotPassword: React.FC = () => {
     }
   };
 
+  const handleResend = async () => {
+    await sendResetEmail();
+  };
+
+  // Show success screen if email was sent
+  if (isEmailSent) {
+    return <EmailSentSuccess email={email} onResend={handleResend} />;
+  }
+
+  // Show forgot password form
   return (
     <div className={styles.container}>
       <header className={styles.header}>
