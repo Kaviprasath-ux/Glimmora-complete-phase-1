@@ -74,6 +74,34 @@
   flex-shrink: 0;
 }
 
+/* ==================== Guest Details ==================== */
+.guestDetailsHeader {
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #2C2C2C;
+  margin: 24px 0 12px 0;
+}
+
+.guestInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.guestInfoItem {
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  color: #5C5C5C;
+}
+
+.guestDivider {
+  height: 1px;
+  background-color: #E8E4E0;
+  margin: 16px 0;
+}
+
 /* ==================== Price Section ==================== */
 .priceSection {
   margin-bottom: 24px;

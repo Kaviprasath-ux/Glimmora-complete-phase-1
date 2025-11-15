@@ -1,0 +1,373 @@
+/* ==================== Page Wrapper ==================== */
+.pageWrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #FAF8F6;
+}
+
+/* ==================== Main Content ==================== */
+.mainContent {
+  flex: 1;
+  padding: 40px 80px 80px;
+}
+
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+/* ==================== Breadcrumb ==================== */
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 32px;
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: #5C5C5C;
+}
+
+.breadcrumb svg {
+  color: #B8B8B8;
+  flex-shrink: 0;
+}
+
+.breadcrumbLink {
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.breadcrumbLink:hover {
+  color: #A57865;
+}
+
+.breadcrumbCurrent {
+  color: #2C2C2C;
+  font-weight: 500;
+}
+
+/* ==================== Grid Layout ==================== */
+.gridLayout {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 48px;
+  margin-top: 40px;
+}
+
+/* ==================== Payment Section ==================== */
+.paymentSection {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.pageTitle {
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-size: 28px;
+  font-weight: 600;
+  color: #2C2C2C;
+  margin: 0;
+}
+
+.sectionHeader {
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: #2C2C2C;
+  margin: 0 0 16px 0;
+}
+
+/* ==================== Payment Method Selection ==================== */
+.paymentMethodSection {
+  background-color: #FFFFFF;
+  border: 1px solid #E8E4E0;
+  border-radius: 12px;
+  padding: 32px;
+}
+
+.paymentMethod {
+  display: block;
+  cursor: pointer;
+  margin-bottom: 16px;
+}
+
+.paymentMethod:last-child {
+  margin-bottom: 0;
+}
+
+.hiddenRadio {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.paymentMethodCard {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 20px;
+  background-color: #FFFFFF;
+  border: 2px solid #E8E4E0;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.paymentMethodCard:hover {
+  border-color: #A57865;
+  background-color: #FAF8F6;
+}
+
+.paymentMethodCard.selected {
+  border-color: #A57865;
+  background-color: #FFF9F5;
+}
+
+/* Radio Indicator */
+.radioIndicator {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #E8E4E0;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.paymentMethodCard.selected .radioIndicator {
+  border-color: #A57865;
+}
+
+.radioInner {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: transparent;
+  transition: all 0.2s ease;
+}
+
+.paymentMethodCard.selected .radioInner {
+  background-color: #A57865;
+}
+
+.paymentMethodCard svg {
+  color: #A57865;
+  flex-shrink: 0;
+}
+
+.paymentMethodText {
+  flex: 1;
+}
+
+.paymentMethodName {
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: #2C2C2C;
+  margin-bottom: 4px;
+}
+
+.paymentMethodDescription {
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  color: #5C5C5C;
+}
+
+/* ==================== Payment Details Section ==================== */
+.paymentDetailsSection {
+  background-color: #FFFFFF;
+  border: 1px solid #E8E4E0;
+  border-radius: 12px;
+  padding: 32px;
+}
+
+/* ==================== Info Box (PayPal) ==================== */
+.infoBox {
+  display: flex;
+  gap: 12px;
+  padding: 20px;
+  background-color: #E8F4FD;
+  border: 1px solid #90CAF9;
+  border-radius: 8px;
+}
+
+.infoBox svg {
+  color: #1976D2;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.infoBoxContent {
+  flex: 1;
+}
+
+.infoBoxTitle {
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  color: #1565C0;
+  margin-bottom: 8px;
+}
+
+.infoBoxText {
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: #0D47A1;
+  line-height: 1.5;
+}
+
+/* ==================== Instructions Box (Bank Transfer) ==================== */
+.instructionsBox {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.instructionsHeader {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: #2C2C2C;
+}
+
+.instructionsHeader svg {
+  color: #A57865;
+  flex-shrink: 0;
+}
+
+.instructionsContent {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.instructionsList {
+  margin: 0;
+  padding-left: 20px;
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: #2C2C2C;
+  line-height: 1.7;
+}
+
+.instructionsList li {
+  margin-bottom: 10px;
+}
+
+.instructionsList li:last-child {
+  margin-bottom: 0;
+}
+
+.warningNote {
+  display: flex;
+  gap: 10px;
+  padding: 16px;
+  background-color: #FFF3CD;
+  border: 1px solid #FFC107;
+  border-radius: 8px;
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  color: #856404;
+}
+
+.warningNote svg {
+  color: #FFA000;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+/* ==================== Button Row ==================== */
+.buttonRow {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding-top: 32px;
+}
+
+/* Back Button */
+.backButton {
+  height: 56px;
+  padding: 0 32px;
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: #A57865;
+  background-color: #FFFFFF;
+  border: 2px solid #A57865;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.backButton:hover {
+  background-color: #FAF8F6;
+}
+
+.backButton:active {
+  transform: scale(0.98);
+}
+
+/* Complete Button */
+.completeButton {
+  height: 56px;
+  padding: 0 32px;
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: #FFFFFF;
+  background: linear-gradient(135deg, #A57865 0%, #8B6450 100%);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  white-space: nowrap;
+  flex: 1;
+  justify-content: center;
+}
+
+.completeButton:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(165, 120, 101, 0.3);
+}
+
+.completeButton:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.completeButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Spinner Animation */
+.spinner {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ==================== Summary Section ==================== */
+.summarySection {
+  /* BookingSummary component has its own sticky positioning */
+}

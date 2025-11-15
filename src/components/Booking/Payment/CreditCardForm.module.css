@@ -1,0 +1,183 @@
+/* ==================== Credit Card Form ==================== */
+.creditCardForm {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* ==================== Section Header ==================== */
+.sectionHeader {
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: #2C2C2C;
+  margin: 0 0 8px 0;
+}
+
+/* ==================== Input Group ==================== */
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.inputLabel {
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: #2C2C2C;
+}
+
+/* ==================== Input Fields ==================== */
+.input {
+  width: 100%;
+  height: 48px;
+  padding: 0 16px;
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: #2C2C2C;
+  background-color: #FFFFFF;
+  border: 1px solid #E8E4E0;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  outline: none;
+}
+
+.input::placeholder {
+  color: #B8B8B8;
+}
+
+.input:focus {
+  border-color: #A57865;
+  box-shadow: 0 0 0 3px rgba(165, 120, 101, 0.1);
+}
+
+.input:hover:not(:focus) {
+  border-color: #CCC8C5;
+}
+
+.inputError {
+  border-color: #DC3545 !important;
+}
+
+.inputError:focus {
+  box-shadow: 0 0 0 3px rgba(220, 53, 69, 0.1) !important;
+}
+
+/* ==================== Input Wrapper (for icons) ==================== */
+.inputWrapper {
+  position: relative;
+}
+
+.inputWrapper .input {
+  padding-right: 48px;
+}
+
+.inputIcon {
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #A57865;
+  pointer-events: none;
+}
+
+/* ==================== Error Messages ==================== */
+.errorMessage {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  color: #DC3545;
+}
+
+.errorMessage svg {
+  flex-shrink: 0;
+}
+
+/* ==================== Expiry Row (Expiry + CVV) ==================== */
+.expiryRow {
+  display: flex;
+  gap: 16px;
+}
+
+.expiryRow > .inputGroup {
+  flex: 1;
+}
+
+/* ==================== Checkbox Label ==================== */
+.checkboxLabel {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: #2C2C2C;
+  cursor: pointer;
+  user-select: none;
+  margin: 8px 0;
+}
+
+.hiddenCheckbox {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.customCheckbox {
+  width: 18px;
+  height: 18px;
+  border: 1px solid #E8E4E0;
+  border-radius: 4px;
+  background-color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.hiddenCheckbox:checked + .customCheckbox {
+  background-color: #A57865;
+  border-color: #A57865;
+}
+
+.customCheckbox svg {
+  color: #FFFFFF;
+}
+
+.checkboxLabel:hover .customCheckbox {
+  border-color: #A57865;
+}
+
+/* ==================== Security Badges ==================== */
+.securityBadges {
+  display: flex;
+  gap: 24px;
+  margin-top: 16px;
+  padding-top: 24px;
+  border-top: 1px solid #E8E4E0;
+}
+
+.securityBadge {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.securityBadge svg {
+  color: #27AE60;
+  flex-shrink: 0;
+}
+
+.badgeText {
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  color: #5C5C5C;
+  line-height: 1.4;
+}

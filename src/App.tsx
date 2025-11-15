@@ -6,18 +6,22 @@
 // import Home from './components/Home';
 // import Rooms from './components/Rooms';
 // import RoomDetails from './components/RoomDetails';
-import GuestDetails from './components/Booking/GuestDetails';
+// import GuestDetails from './components/Booking/GuestDetails';
+import Payment from './components/Booking/Payment/Payment';
 import './App.css';
 
 function App() {
-  // Showing Guest Details (Booking Step 1) page
+  // Showing Payment (Booking Step 2) page
   // Toggle isAuthenticated to test both states
 
-  // LOGGED-IN STATE (Shows new avatar dropdown design and auto-fills user data):
-  return <GuestDetails isAuthenticated={true} user={{ firstName: 'John', lastName: 'Doe', email: 'john.doe@glimmora.com' }} />;
+  // LOGGED-IN STATE (Shows new avatar dropdown design):
+  return <Payment isAuthenticated={true} user={{ firstName: 'John', lastName: 'Doe', email: 'john.doe@glimmora.com' }} />;
 
   // UNLOGGED STATE (Uncomment to test):
-  // return <GuestDetails isAuthenticated={false} />;
+  // return <Payment isAuthenticated={false} />;
+
+  // GUEST DETAILS PAGE (Uncomment to view):
+  // return <GuestDetails isAuthenticated={true} user={{ firstName: 'John', lastName: 'Doe', email: 'john.doe@glimmora.com' }} />;
 
   // ROOM DETAILS PAGE (Uncomment to view):
   // return <RoomDetails isAuthenticated={true} user={{ firstName: 'John', lastName: 'Doe', email: 'john.doe@glimmora.com' }} />;

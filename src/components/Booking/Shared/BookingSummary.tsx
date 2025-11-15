@@ -20,6 +20,11 @@ interface BookingSummaryProps {
     lateCheckOut?: number;
   };
   freeCancellationDate: string;
+  guestDetails?: {
+    name: string;
+    email: string;
+    phone: string;
+  };
 }
 
 const BookingSummary: React.FC<BookingSummaryProps> = ({
@@ -35,6 +40,7 @@ const BookingSummary: React.FC<BookingSummaryProps> = ({
   taxes,
   additionalOptions = {},
   freeCancellationDate,
+  guestDetails,
 }) => {
   const roomTotal = roomPrice * nights;
   const additionalTotal = Object.values(additionalOptions).reduce((sum, val) => sum + (val || 0), 0);
@@ -77,6 +83,19 @@ const BookingSummary: React.FC<BookingSummaryProps> = ({
           <span>{guests} {guests === 1 ? 'Guest' : 'Guests'}</span>
         </div>
       </div>
+
+      {/* Guest Details (if provided) */}
+      {guestDetails && (
+        <>
+          <h4 className={styles.guestDetailsHeader}>Guest Details</h4>
+          <div className={styles.guestInfo}>
+            <div className={styles.guestInfoItem}>{guestDetails.name}</div>
+            <div className={styles.guestInfoItem}>{guestDetails.email}</div>
+            <div className={styles.guestInfoItem}>{guestDetails.phone}</div>
+          </div>
+          <div className={styles.guestDivider} />
+        </>
+      )}
 
       {/* Price Breakdown */}
       <div className={styles.priceSection}>
